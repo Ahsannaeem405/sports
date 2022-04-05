@@ -1,0 +1,97 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+}
+
+img {
+    width: 160px;
+}
+
+.bg-gradient {
+    background: rgb(41, 41, 41);
+    background: linear-gradient(0deg, rgba(41, 41, 41, 1) 0%, rgba(160, 0, 0, 1) 100%);
+}
+
+form .btn {
+    background: #7c0202;
+    /* background: #7c0202; */
+    color: #fff;
+    border: none;
+    line-height: normal;
+    border-radius: 20px;
+    opacity: .8;
+}
+
+form .btn:hover {
+    background: #7c0202;
+    color: #fff;
+    border: none;
+    line-height: normal;
+    border-radius: 20px;
+}
+
+ul li {
+    background-color: white;
+    border: 1px solid #7c0202;
+}
+
+ul li a {
+    color: black;
+}
+
+ul li a:hover {
+    background-color: #7c0202;
+    color: white !important;
+    opacity: 0.8;
+}
+
+.card-bg {
+    transition: 0.5s;
+    background: rgb(41, 41, 41);
+    background: linear-gradient(0deg, rgba(41, 41, 41, 1) 0%, rgba(160, 0, 0, 1) 100%);
+}
+
+.card-bg:hover {
+    box-shadow: 20px 20px 10px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+
+.footer-bg {
+    background: rgb(41, 41, 41);
+    background: linear-gradient(0deg, rgba(41, 41, 41, 1) 0%, rgba(160, 0, 0, 1) 100%);
+}
+
+.fs-18 {
+    font-size: 18px;
+}
+
+.fs-13 {
+    font-size: 13px;
+}
+
+.card-basketBall {
+    background: linear-gradient(-120deg, #D62121, #C72C2C, #3a1111);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+    transition: 0.5s;
+    border-radius: 15px !important;
+}
+
+.card-basketBall:hover {
+    box-shadow: 20px 20px 10px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+
+.placeOrder {
+    border-right: 5px solid rgb(222, 221, 221);
+}
+
+.orderDetails {
+    border-bottom: 5px solid rgb(222, 221, 221);
+}

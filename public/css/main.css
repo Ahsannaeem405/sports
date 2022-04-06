@@ -12,6 +12,28 @@ img {
     width: 160px;
 }
 
+.btn-none {
+    border: none !important;
+    background: transparent !important;
+}
+
+.productsItems {
+    background-color: #ED2939;
+}
+
+.heading {
+    color: #fff;
+    transition: all 1s ease 0s;
+}
+
+.heading::after {
+    content: "";
+    width: 3px;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+}
+
 .bg-gradient {
     background: rgb(41, 41, 41);
     background: linear-gradient(0deg, rgba(41, 41, 41, 1) 0%, rgba(160, 0, 0, 1) 100%);
@@ -67,10 +89,6 @@ ul li a:hover {
     background: linear-gradient(0deg, rgba(41, 41, 41, 1) 0%, rgba(160, 0, 0, 1) 100%);
 }
 
-.hover_none:hover {
-    text-decoration: none !important;
-}
-
 .fs-18 {
     font-size: 18px;
 }
@@ -98,4 +116,55 @@ ul li a:hover {
 
 .orderDetails {
     border-bottom: 5px solid rgb(222, 221, 221);
+    background-color: #f8f9d2;
+    background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 74%);
+}
+
+.productOptions {
+    /* background-color: #fff;
+    box-shadow: 1px 3px 10px 2px grey;
+    border: grey;
+    border-radius: 5px; */
+    background-color: #fff;
+    box-shadow: 3px 2px 5px grey;
+    border-left: 2px solid rgb(194, 192, 192);
+    border-top: 2px solid rgb(194, 192, 192);
+    border-radius: 5px;
+}
+
+.productHeading {
+    font-size: 1.3rem;
+}
+
+.colorOptions {
+    background-color: #fff;
+    box-shadow: 3px 2px 5px grey;
+    border-left: 2px solid rgb(194, 192, 192);
+    border-top: 2px solid rgb(194, 192, 192);
+    border-radius: 5px;
+}
+
+.optionsHeading {
+    font-size: 1.3rem;
+}
+
+.lettering {
+    background-color: #fff;
+    box-shadow: 3px 2px 5px grey;
+    border-left: 2px solid rgb(194, 192, 192);
+    border-top: 2px solid rgb(194, 192, 192);
+    border-radius: 5px;
+}
+
+.logos {
+    background-color: #fff;
+    box-shadow: 3px 2px 5px grey;
+    border-left: 2px solid rgb(194, 192, 192);
+    border-top: 2px solid rgb(194, 192, 192);
+    border-radius: 5px;
+}
+
+.greyWhiteGradiant {
+    background-color: #f8f9d2;
+    background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 74%);
 }

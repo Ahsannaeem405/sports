@@ -1,27 +1,43 @@
 @extends('user.layout.header')
-
+<link rel="stylesheet" href="{{asset('css/home.css')}}">
 @section('content')
 <section class="products pt-5">
     <div class="container">
         <div class="row">
-            <div class="col text-center">
+            <div class="col-12 text-center">
                 <h2>Choose a sports below to get started</h2>
             </div>
         </div>
-        <div class="row mt-5">
-            @foreach ($sports as $sport )
-            <div class="col-md-3 col-12 mt-2 text-center">
+        <div class="row mt-5 pb-5">
+            @forelse ($sports as $sport )
+
+            <div class="col-md-4 col-12 mt-5 text-center">
                 <a href="{{url('user/product/'.$sport->id)}}" class="hover_none">
-                <div class="card card-bg">
+                    <div class="card">
+                        <div class="card-img">
+                          <img src="{{asset('upload/sports/'.$sport->image)}}" >
+                        </div>
+                        <div class="card-content">
+                          <h2 class="big-title">{{$sport->name}}</h2>
+
+                        </div>
+                      </div>
+                {{-- <div class="card card-bg">
                     <div class="card-body border-bottom pb-0">
                     <h4 class="card-title text-white">{{$sport->name}}</h4>
                     </div>
                   <div class="py-3"><img class="img-fluid" alt="BasketBall"
                     src="{{asset('upload/sports/'.$sport->image)}}"></div>
-                </div>
+                </div> --}}
             </a>
               </div>
-            @endforeach
+              @empty
+              <div class="col-12 text-center height d-flex" style="
+              justify-content: center;
+              align-items: center;">
+                  <h1>No Sports Available</h1>
+              </div>
+            @endforelse
 
             {{-- <div class="col-md-3 text-center">
                 <div class="card card-bg">

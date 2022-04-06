@@ -17,4 +17,7 @@ class UserController extends Controller
         return view('user.product',compact('products'));
 
     }
+    function option(){
+        return view('user.option');
+    }
 }

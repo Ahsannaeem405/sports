@@ -87,6 +87,9 @@ Route::prefix('/admin')->middleware(['SessionCheck', 'auth'])->group(function ()
 Route::prefix('/user')->middleware(['UserCheck', 'auth'])->group(function () {
     Route::get('/', [UserController::class, 'index']);
     Route::get('product/{id}',[UserController::class,'product']);
+    Route::get('option',[UserController::class,'option']);
+
+
 
 
 

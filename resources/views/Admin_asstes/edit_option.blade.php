@@ -30,6 +30,7 @@
             </div>
             <div class="card-content p-3">
                 <form action="{{url('admin/update_option')}}" method="POST">
+                    <input type="hidden" name="id" value="{{$option->id}}">
                     @csrf
                     <div class="row p-3">
                         {{-- <div class="col-12 mt-2">
@@ -41,10 +42,12 @@
                             <label><b>Sports Name</b></label><br>
                            <select name="sports" class="form-control" id="sports">
                                @if (isset($sports))
-                            <option value="">Select Sports</option>
+
 
                             @foreach ($sports as $sport)
-                            <option value="{{$sport->id}}">{{$sport->name}}</option>
+                            <option value="{{$sport->id}}" @if ($option->products->sports_id==$sport->id)
+                                selected
+                            @endif>{{$sport->name}}</option>
                             @endforeach
                                @endif
 
@@ -55,8 +58,15 @@
                          <div class="col-lg-12 col-12 mt-2">
                             <label><b>Product Name</b></label><br>
                            <select name="product_id" class="form-control" id="products">
+                            @if (isset($products))
 
 
+                            @foreach ($products as $product)
+                            <option value="{{$product->id}}" @if ($option->product_id==$product->id)
+                                selected
+                            @endif>{{$product->name}}</option>
+                            @endforeach
+@endif
                            </select>
                          </div>
                         <div class="col-12 mt-2">

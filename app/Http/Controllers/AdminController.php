@@ -207,8 +207,9 @@ class AdminController extends Controller
     }
     function edit_option($id){
         $option=Option::find($id);
+        $products=Product::all();
         $sports=Sport::all();
-        return view('Admin_asstes.edit_option',compact('option','sports'));
+        return view('Admin_asstes.edit_option',compact('option','sports','products'));
     }
     function update_option(Request $request){
         $validated = $request->validate([

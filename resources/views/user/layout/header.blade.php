@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sports Wear</title>
     <!-- Main CSS -->
-    <link rel="stylesheet" href="{{asset('main.css')}}">
+    <link rel="stylesheet" href="{{asset('css/main.css')}}">
     <!-- Bootstrap link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -16,7 +16,7 @@
 <body>
     <section class="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand pl-2" href="#"><img src="./img/logo.gif" alt="Logo" class="img img-fuild"></a>
+          <a class="navbar-brand pl-2" href="#"><img src="{{asset('img/logo.gif')}}" alt="Logo" class="img img-fuild"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -28,7 +28,14 @@
             </ul>
             <form class="d-flex text-center pl-2 pt-lg-0 pt-2">
               {{-- <button class="btn px-4 py-2" type="button">Login</button> --}}
-              <a href="{{url('/login')}}" class="btn px-4 py-2"type="button">Login</a>
+              @if (Auth::check())
+              <a href="{{url('/logout')}}"  class="btn px-4 py-2" type="button">Logout</a>
+
+
+            @else
+            <a href="{{url('/login')}}" class="btn px-4 py-2"type="button">Login</a>
+              @endif
+
           </form>
           </div>
         </nav>
@@ -41,7 +48,7 @@
       <div class="row">
         <div class="col-lg-4 mb-3 col-sm-12 d-flex justify-content-md-center">
           <div class="d-flex align-items-center"><a class="mb-2" href="#">
-            <img src="./img/logo.gif" class="img-fluid" alt="footer-logo"></div>
+            <img src="{{asset('img/logo.gif')}}" class="img-fluid" alt="footer-logo"></div>
            </a>
         </div>
       </div>

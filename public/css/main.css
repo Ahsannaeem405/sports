@@ -67,6 +67,10 @@ ul li a:hover {
     background: linear-gradient(0deg, rgba(41, 41, 41, 1) 0%, rgba(160, 0, 0, 1) 100%);
 }
 
+.hover_none:hover {
+    text-decoration: none !important;
+}
+
 .fs-18 {
     font-size: 18px;
 }

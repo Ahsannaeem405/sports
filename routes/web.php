@@ -29,6 +29,7 @@ Route::get('/login', function () {
 
     return view('auth.login');
 });
+Route::get('/logout', [App\Http\Controllers\HomeController::class, 'logout']);
 Route::prefix('/admin')->middleware(['SessionCheck', 'auth'])->group(function () {
     Route::get('/index', [AdminController::class, 'index']);
     Route::get('/users', [AdminController::class, 'users']);
@@ -85,6 +86,7 @@ Route::prefix('/admin')->middleware(['SessionCheck', 'auth'])->group(function ()
 });
 Route::prefix('/user')->middleware(['UserCheck', 'auth'])->group(function () {
     Route::get('/', [UserController::class, 'index']);
+    Route::get('product/{id}',[UserController::class,'product']);
 
 
 

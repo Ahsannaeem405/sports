@@ -41,10 +41,7 @@
                       <input type="text" class="form-control form-control-sm" id="previousOrderNum">
                     </div></div>
 
-                      <div class="d-flex">
-                          <a href="{{url('rosters')}}">  <input type="button" value="save" class="btn btn-success mr-2 bg-success"></a>
-                          <a href="{{url("print")}}"> <input type="button" value="print" class="btn btn-primary mr-2"></a>
-                      </div>
+                      
                   </form>
                 </div>
               <div class="uploadArtwork text-center pt-5">
@@ -194,7 +191,12 @@ Color
             <!-- Product and color section -->
 
             <!-- Lettering and Logos -->
+            
             <div class="col-lg-6 col-12 greyWhiteGradiant py-5">
+              <div class="float-right">
+                <a href="{{url('rosters')}}">  <input type="button" value="Next" class="btn btn-success mr-2 bg-success"></a>
+                {{-- <a href="{{url("print")}}"> <input type="button" value="print" class="btn btn-primary mr-2"></a> --}}
+            </div>
               <div class="lettering">
                 <div class="row">
                   <div class="col-12 pt-2 pb-4">

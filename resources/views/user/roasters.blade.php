@@ -19,7 +19,7 @@
                                 <img src="{{asset('img/uploadicon.png')}}" class="img-fluid" alt="Upload Icon">
                             </div>
                             <div class="d-flex justify-content-end align-items-center pl-4">
-                                <a class="pr-3" href="#">Add Player</a>
+                                <a href="{{url("print")}}"class="pr-3"> <input type="button" value="print" class="btn btn-primary mr-2"></a>
 
                             </div>
                         </div>

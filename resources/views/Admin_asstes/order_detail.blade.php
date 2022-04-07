@@ -277,7 +277,7 @@ Color
 
                     <div class="form-group">
                       <label for="size" class=""><b>Size:</b></label>
-                        <input type="text" class="form-control" value="20px">
+                        <input type="text" class="form-control" value="20px;">
                     </div>
 
 

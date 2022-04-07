@@ -8,25 +8,23 @@
 @section('content')
 
     <div class="row">
-        <div class="col-lg-12">
+        {{-- <div class="col-lg-12">
             <button type="button" class="btn btn-primary" style="float: right;" data-toggle="modal"
                     data-target="#exampleModal">
                 Add Options
             </button>
-        </div>
+        </div> --}}
     </div>
-    <div class="card mt-2">
+    <div class="">
 
-        @if ($errors->has('product_id'))
+        {{-- @if ($errors->has('product_id'))
             <div class="alert alert-danger">
                 <span class="text-danger">Product Not Found</span>
             </div>
-        @endif
+        @endif --}}
 
-        <div class="card-header">
-            <h4>Product</h4>
-        </div>
-        <div class="card-content p-3">
+      
+        <div class="">
             {{-- <form action="#">
 
              <div class="row p-3">
@@ -46,61 +44,206 @@
              </div>
             </form> --}}
 
-            <div class="table-responsive">
-                <table class="table zero-configuration">
-                    <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Product Name</th>
-                        <th>Option</th>
+            <div class="" role="">
+
+                <div class="modal-content">
+    
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Option</h5>
+                        {{-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button> --}}
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{url('admin/add_option')}}" method="POST" enctype="multipart/form-data">
+                            @csrf
+    
+                            <div class="row ">
+                                <div class="col-lg-12 col-12 mt-2">
+                                    <label><b>Sports Name</b></label><br>
+                                    <select name="sports" class="form-control" id="sports">
+                                        @if (isset($sports))
+                                            <option value="">Select Sports</option>
+    
+                                            @foreach ($sports as $sport)
+                                                <option value="{{$sport->id}}">{{$sport->name}}</option>
+                                            @endforeach
+                                        @endif
+    
+    
+                                    </select>
+                                </div>
+                                <div class="col-lg-12 col-12 mt-2">
+                                    <label><b>Product Name</b></label><br>
+                                    <select name="product_id" class="form-control" id="products">
+    
+    
+                                    </select>
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <div class="row">
+                                    <div class="col-6"> 
+                                    <div id="accordion">
+                                        <div class="card">
+                                            <div class="card-header" id="headingOne">
+                                                <h5 class="mb-0">
+                                                    <button class="btn btn-link tabclick text-dark" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                        Product Option
+                                                    </button>
+                                                </h5>
+                                            </div>
+                                
+                                            <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
+                                                <div class="">
+                                
+                                <div class="col-lg-12   my-2">
+                         Fabric Choice
+                                </div>
+                                <div class="col-lg-12   my-2">
+                                    Neck Style
+                                           </div>
+                                           <div class="col-lg-12   my-2">
+                                            Jersy Fit
+                                                   </div>
+                                                   <div class="col-lg-12   my-2">
+                                                    Short Inseam
+                                                           </div>
+                                                    
+                                            </div>
+                                        </div>
+                                    </div>
+                               
 
 
-                        <th>Action</th>
-
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @php
-                        $x=0;
-                    @endphp
-                    @foreach ($options as $header)
-                        @php
-                            $x++;
-                        @endphp
-                        <tr>
-                            <td>{{$x}}</td>
-                            <td>{{$header->products->name}}</td>
-                            <td>{{$header->option}}</td>
 
 
-                            <td>
+                                </div>
+    
+    
+                            </div>
+                            <div class="col-6"> 
+                                <div id="accordion2">
+                                    <div class="card">
+                                        <div class="card-header" id="headingOne">
+                                            <h5 class="mb-0">
+                                                <button class="btn btn-link tabclick text-dark" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                                  Color Version
+                                                </button>
+                                            </h5>
+                                        </div>
+                            
+                                        <div id="collapseTwo" class="collapse " aria-labelledby="headingTwo" data-parent="#accordion2">
+                                            <div class="">
+                            
+                            <div class="col-lg-12   my-2">
+                    Neck
+                            </div>
+                            <div class="col-lg-12   my-2">
+                                Acent
+                                       </div>
+                                       <div class="col-lg-12   my-2">
+                                        Bu logo
+                                               </div>
+                                               <div class="col-lg-12   my-2">
+                                                Body
+                                                       </div>
+                                                
+                                        </div>
+                                    </div>
+                                </div>
+                           
 
 
-                                <a href="{{url('admin/edit_option/'.$header->id)}}"
-                                   class="btn btn-primary ml-lg-1 ml-md-1 mt-1">Edit</a>
+                                </div>
 
-                                <a href="{{url('admin/delete_option/'.$header->id)}}"
-                                   class="btn btn-danger ml-lg-1 ml-md-1 mt-1">Delete</a>
+                            </div>
 
 
-                            </td>
-                        </tr>
+                        </div>
+                        
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <div class="row">
+                                    <div class="col-6"> 
+                                    <div id="accordion3">
+                                        <div class="card">
+                                            <div class="card-header" id="headingOne">
+                                                <h5 class="mb-0">
+                                                    <button class="btn btn-link tabclick text-dark" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                                        Color
+                                                    </button>
+                                                </h5>
+                                            </div>
+                                
+                                            <div id="collapseThree" class="collapse " aria-labelledby="headingThree" data-parent="#accordion3">
+                                                <div class="">
+                                
+                                <div class="col-lg-12   my-2">
+                         Color 1
+                                </div>
+                                <div class="col-lg-12   my-2">
+                                Color 2
+                                           </div>
+                                          
+                                                    
+                                            </div>
+                                        </div>
+                                    </div>
+                               
 
-                    @endforeach
 
 
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>Product Name</th>
-                        <th>Fabric Choice</th>
+
+                                </div>
+    
+    
+                            </div>
+                            <div class="col-6"> 
+                                <div id="accordion4">
+                                    <div class="card">
+                                        <div class="card-header" id="headingOne">
+                                            <h5 class="mb-0">
+                                                <button class="btn btn-link tabclick text-dark" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                                 Size
+                                                </button>
+                                            </h5>
+                                        </div>
+                            
+                                        <div id="collapseFour" class="collapse " aria-labelledby="headingFour" data-parent="#accordion4">
+                                            <div class="">
+                            
+                            <div class="col-lg-12   my-2">
+                     Size 1
+                            </div>
+                            <div class="col-lg-12   my-2">
+                             Size 2
+                                       </div>
+                                       
+                                                
+                                        </div>
+                                    </div>
+                                </div>
+                           
 
 
-                        <th>Action</th>
-                    </tr>
-                    </tfoot>
-                </table>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                        
+                                </div>
+    
+                    </div>
+                    <div class="modal-footer">
+                        {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
+                        <button type="submit" class="btn btn-primary">Add</button>
+    
+                    </div>
+                    </form>
+                </div>
+    
             </div>
 
 

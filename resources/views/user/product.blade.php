@@ -8,7 +8,7 @@
             <h2>Products</h2>
         </div>
         @forelse ($products as $product )
-        <div class="col-md-4 col-12 mt-4">
+        <div class="col-md-4 col-12 my-4">
             <div class="flip-card">
                 <a href="{{url('user/option')}}">
                 <div class="flip-card-inner">

@@ -33,13 +33,18 @@
                   </div>
                     <div class="pt-2">
                       <div class="form-group">
-                      <label for="location"><b>Location:</b></label>
+                      <label for="location"><b>Reorder:</b></label>
                       <input type="checkbox">
                     </div>
                     <div class="form-group">
                       <label for="previousOrderNum"><b>Previous Order Number:</b></label>
                       <input type="text" class="form-control form-control-sm" id="previousOrderNum">
                     </div></div>
+
+                      <div class="d-flex">
+                          <a href="{{url('rosters')}}">  <input type="button" value="save" class="btn btn-success mr-2 bg-success"></a>
+                          <a href="{{url("print")}}"> <input type="button" value="print" class="btn btn-primary mr-2"></a>
+                      </div>
                   </form>
                 </div>
               <div class="uploadArtwork text-center pt-5">
@@ -219,32 +224,17 @@ Color
 
                     <div class="form-group">
                       <label for="text" class=""><b>Text:</b></label>
-                      <select class="form-control form-control-sm" aria-label=".form-control-sm example">
-                        <option selected>Select Fabric</option>
-                        <option value="ClimaPro">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
+                        <input type="text" class="form-control">
                     </div>
 
                     <div class="form-group">
                       <label for="mainColor" class=""><b>Main Color:</b></label>
-                      <select class="form-control form-control-sm" aria-label=".form-control-sm example">
-                        <option selected>Select Fabric</option>
-                        <option value="ClimaPro">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
+                        <input type="text" class="form-control">
                     </div>
 
                     <div class="form-group">
                       <label for="trimColor" class=""><b>Trim Color:</b></label>
-                      <select class="form-control form-control-sm" aria-label=".form-control-sm example">
-                        <option selected>Select Fabric</option>
-                        <option value="ClimaPro">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
+                        <input type="text" class="form-control">
                     </div>
 
                     <div class="form-group ">
@@ -254,12 +244,7 @@ Color
 
                     <div class="form-group">
                       <label for="size" class=""><b>Size:</b></label>
-                      <select class="form-control form-control-sm" aria-label=".form-control-sm example">
-                        <option selected>Select Fabric</option>
-                        <option value="ClimaPro">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
+                        <input type="text" class="form-control">
                     </div>
 
 
@@ -276,22 +261,12 @@ Color
 
                     <div class="form-group">
                       <label for="mainColor" class=""><b>Main Color:</b></label>
-                      <select class="form-control form-control-sm" aria-label=".form-control-sm example">
-                        <option selected>Select Fabric</option>
-                        <option value="ClimaPro">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
+                        <input type="text" class="form-control">
                     </div>
 
                     <div class="form-group">
                       <label for="trimColor" class=""><b>Trim Color:</b></label>
-                      <select class="form-control form-control-sm" aria-label=".form-control-sm example">
-                        <option selected>Select Fabric</option>
-                        <option value="ClimaPro">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
+                        <input type="text" class="form-control">
                     </div>
 
                     <div class="form-group">
@@ -301,12 +276,7 @@ Color
 
                     <div class="form-group">
                       <label for="size" class=""><b>Size:</b></label>
-                      <select class="form-control form-control-sm" aria-label=".form-control-sm example">
-                        <option selected>Select Fabric</option>
-                        <option value="ClimaPro">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
+                        <input type="text" class="form-control">
                     </div>
 
 
@@ -414,39 +384,24 @@ $('#btn_text').click(function() {
             var html=`
             <div class="col-6 pb-3 pt-3 add-new-product1" id="removeTr" val='`+val+`'>
                         <button class="float-right btn-none" id="deletebtn"><i class="fas fa-trash" style="color: red"></i></button>
-                      <div class="form-group">
+                     <div class="form-group">
                         <label for="location"><b>Location:</b></label>
                         <input type="text" class="form-control form-control-sm" id="location">
                       </div>
 
                     <div class="form-group">
                       <label for="text" class=""><b>Text:</b></label>
-                      <select class="form-control form-control-sm" aria-label=".form-control-sm example">
-                        <option selected>Select Fabric</option>
-                        <option value="ClimaPro">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
+                        <input type="text" class="form-control">
                     </div>
 
                     <div class="form-group">
                       <label for="mainColor" class=""><b>Main Color:</b></label>
-                      <select class="form-control form-control-sm" aria-label=".form-control-sm example">
-                        <option selected>Select Fabric</option>
-                        <option value="ClimaPro">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
+                        <input type="text" class="form-control">
                     </div>
 
                     <div class="form-group">
                       <label for="trimColor" class=""><b>Trim Color:</b></label>
-                      <select class="form-control form-control-sm" aria-label=".form-control-sm example">
-                        <option selected>Select Fabric</option>
-                        <option value="ClimaPro">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
+                        <input type="text" class="form-control">
                     </div>
 
                     <div class="form-group ">
@@ -456,16 +411,10 @@ $('#btn_text').click(function() {
 
                     <div class="form-group">
                       <label for="size" class=""><b>Size:</b></label>
-                      <select class="form-control form-control-sm" aria-label=".form-control-sm example">
-                        <option selected>Select Fabric</option>
-                        <option value="ClimaPro">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
+                        <input type="text" class="form-control">
                     </div>
+</div>
 
-
-                  </div>
             `;
             var tableBody = $("#div_append").append(html);
 
@@ -483,7 +432,7 @@ $('#btn_text').click(function() {
             var html=`
             <div class="col-6 pb-3 pt-3 add-new-product2" id="removeTr2" val='1'>
                     <button class="float-right btn-none" id="deletebtn2"><i class="fas fa-trash" style="color: red"></i></button>
-                      <div class="form-group">
+                              <div class="form-group">
                         <label for="location"><b>Location:</b></label>
                         <input type="text" class="form-control form-control-sm" id="location">
                       </div>
@@ -492,22 +441,12 @@ $('#btn_text').click(function() {
 
                     <div class="form-group">
                       <label for="mainColor" class=""><b>Main Color:</b></label>
-                      <select class="form-control form-control-sm" aria-label=".form-control-sm example">
-                        <option selected>Select Fabric</option>
-                        <option value="ClimaPro">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
+                        <input type="text" class="form-control">
                     </div>
 
                     <div class="form-group">
                       <label for="trimColor" class=""><b>Trim Color:</b></label>
-                      <select class="form-control form-control-sm" aria-label=".form-control-sm example">
-                        <option selected>Select Fabric</option>
-                        <option value="ClimaPro">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
+                        <input type="text" class="form-control">
                     </div>
 
                     <div class="form-group">
@@ -517,14 +456,8 @@ $('#btn_text').click(function() {
 
                     <div class="form-group">
                       <label for="size" class=""><b>Size:</b></label>
-                      <select class="form-control form-control-sm" aria-label=".form-control-sm example">
-                        <option selected>Select Fabric</option>
-                        <option value="ClimaPro">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
+                        <input type="text" class="form-control">
                     </div>
-
 
                   </div>
             `;

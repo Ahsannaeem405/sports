@@ -22,8 +22,10 @@ Route::get('/', function () {
 Route::get('/page1', function () {
     return view('user.home');
 });
-Route::get('/page2', function () {
+Route::get('/print', function () {
     return view('user.home2');
+});Route::get('/rosters', function () {
+    return view('user.roasters');
 });
 Route::get('/login', function () {
 
@@ -64,54 +66,11 @@ Route::prefix('/admin')->middleware(['SessionCheck', 'auth'])->group(function ()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
 Route::prefix('/user')->middleware(['UserCheck', 'auth'])->group(function () {
     Route::get('/', [UserController::class, 'index']);
     Route::get('product/{id}',[UserController::class,'product']);
     Route::get('option',[UserController::class,'option']);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -57,8 +57,8 @@ Route::prefix('/admin')->middleware(['SessionCheck', 'auth'])->group(function ()
     Route::get('delete_option/{id}',[AdminController::class,'delete_option']);
     Route::get('edit_option/{id}',[AdminController::class,'edit_option']);
     Route::post('update_option',[AdminController::class,'update_option']);
-
-
+    Route::get('orders',[AdminController::class,'orders']);
+    Route::get('order_detail/1',[AdminController::class,'order_detail']);
 
 
 

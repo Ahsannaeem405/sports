@@ -222,5 +222,10 @@ class AdminController extends Controller
         $option->update();
         return back()->with("success","Successfully Updated");
     }
-
+public function orders(){
+    return view('Admin_asstes.order');
+}
+public function order_detail(){
+    return view('Admin_asstes.order_detail');
+}
 }

@@ -14,7 +14,12 @@
 @section('content')
 
 <section class="productFeatures">
+  
     <div class="container-fluid">
+      <div class="d-flex justify-content-end align-items-center pl-4 ">
+        <a href="{{url('rosters')}}">  <input type="button" value="Next" class="btn btn-success mr-2 bg-success"></a>
+        {{-- <a href="{{url("print")}}"> <input type="button" value="print" class="btn btn-primary mr-2"></a> --}}
+    </div>
         <div class="row">
           <!-- Place order section -->
             <div class="col-md-6 col-lg-3 col-12 greyWhiteGradiant placeOrder px-0">
@@ -193,10 +198,7 @@ Color
             <!-- Lettering and Logos -->
             
             <div class="col-lg-6 col-12 greyWhiteGradiant py-5">
-              <div class="float-right">
-                <a href="{{url('rosters')}}">  <input type="button" value="Next" class="btn btn-success mr-2 bg-success"></a>
-                {{-- <a href="{{url("print")}}"> <input type="button" value="print" class="btn btn-primary mr-2"></a> --}}
-            </div>
+              
               <div class="lettering">
                 <div class="row">
                   <div class="col-12 pt-2 pb-4">

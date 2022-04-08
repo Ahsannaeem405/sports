@@ -94,13 +94,13 @@ val2++;
 $("#btn_addsection").attr('add_new',val2);
 
 $(".roster-border").attr('val', val);
-var html=`  <div class="row mx-3 my-3 bg-white roster-border" id="roster-border">
+var html=`  <div class="row mx-3 my-3 bg-white roster-border" id="roster-border${r}">
                         <div class="col-12">
                             <h3 class="pt-4 pl-4">ROSTER</h3>
                         </div>
                        <div class="col-12">
                        <div class="float-right">
-                            <i class="fa fa-trash text-danger "id="deletebn" ></i>
+                            <i class="fa fa-trash text-danger "id="deletebn" val4="${r}"></i>
                             </div>
                         </div>
                         <div class="col-12 pt-4 d-flex justify-content-between">
@@ -159,8 +159,11 @@ var tableBody = $("#sectionadd").append(html);
 });
 r++;
   $(document).on('click', '#deletebn', function() {
-          
-        $(this).closest('#roster-border').remove();
+          var button_id = $(this).attr("val4");
+       
+                $('#roster-border' + button_id + '').remove();
+
+       
     });
 
                 $('.btn_addRow').click(function () {

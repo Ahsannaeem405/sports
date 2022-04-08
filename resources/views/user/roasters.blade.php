@@ -76,9 +76,7 @@
             </div>
         </div>
     </section>
-    <script>
-        $('.dropify').dropify();
-    </script>
+  
     <script>
         $( document ).ready(function() {
             var r=1;
@@ -221,5 +219,8 @@ var tableBody = $('#add_row' + button_id2 + '').append(html);
      });
    
         </script>
+          <script>
+        $('.dropify').dropify();
+    </script>
 @endsection
 

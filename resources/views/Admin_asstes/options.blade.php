@@ -4,6 +4,8 @@
 <script type="text/javascript" src="https://jeremyfagis.github.io/dropify/dist/js/dropify.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://jeremyfagis.github.io/dropify/dist/css/dropify.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <style>
     .pluscolor{
         color:rgb(0, 255, 128);
@@ -94,7 +96,7 @@
                                         <div class="card">
                                             <div class="card-header" id="headingOne"style="background-color: #c3d2e1;">
                                                 <h5 class="">
-                                                    <button class="btn btn-link tabclick text-dark" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    <button  type="button" class="btn btn-link tabclick text-dark" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                                         Product Option
                                                     </button>
                                                 </h5>
@@ -151,7 +153,7 @@
                                     <div class="card">
                                         <div class="card-header" id="headingOne"style="background-color: #c3d2e1;">
                                             <h5 class="mb-0">
-                                                <button class="btn btn-link tabclick text-dark" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                                <button type="button" class="btn btn-link tabclick text-dark" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                                                   Color Version
                                                 </button>
                                             </h5>
@@ -210,7 +212,7 @@
                                         <div class="card">
                                             <div class="card-header" id="headingOne"style="background-color: #c3d2e1;">
                                                 <h5 class="mb-0">
-                                                    <button class="btn btn-link tabclick text-dark" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                                    <button type="button" class="btn btn-link tabclick text-dark" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                                                         Color
                                                     </button>
                                                 </h5>
@@ -252,7 +254,7 @@
                                     <div class="card">
                                         <div class="card-header" id="headingOne"style="background-color: #c3d2e1;">
                                             <h5 class="mb-0">
-                                                <button class="btn btn-link tabclick text-dark" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                                <button type="button" class="btn btn-link tabclick text-dark" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
                                                  Size
                                                 </button>
                                             </h5>
@@ -392,5 +394,10 @@
 
 
         });
+    </script>
+    <script>
+        $(document).ready(function() {
+    $('.js-example-basic-multiple').select2();
+});
     </script>
 @endsection

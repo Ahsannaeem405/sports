@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Sport;
+use App\Models\roaster;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -19,5 +20,8 @@ class UserController extends Controller
     }
     function option(){
         return view('user.option');
+    }
+    function add_roaster(Request $request){
+        return roaster::get();
     }
 }

@@ -6,14 +6,34 @@ use App\Models\Option;
 use App\Models\Product;
 use App\Models\Sport;
 use App\Models\User;
+use App\models\order;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-
+use DB;
 class AdminController extends Controller
 {
     function index(){
-        return view('Admin_asstes.index');
+       
+      $orders = Order::select(
+         DB::raw('count(*) as total'),
+            DB::raw("DATE_FORMAT(created_at,'%M %Y') as months"),
+            DB::raw("DATE_FORMAT(created_at,'%M') as monthKey")
+  )
+  ->groupBy('months', 'monthKey')
+  ->get();
+//   dd($orders);
+
+//  $data = [];
+ 
+//      foreach($orders as $row) {
+//         $data['label'][] =$row->created_at;
+//         $data['data'][] = (int) $row->total;
+//       }
+// return $data;
+    // $data['chart_data'] = json_encode($data);
+    // return $chart_data;
+        return view('Admin_asstes.index',compact('orders'));
     }
     function users(){
         $users=User::where('role','user')->get();
@@ -227,5 +247,54 @@ public function orders(){
 }
 public function order_detail(){
     return view('Admin_asstes.order_detail');
+}
+public function edit_profile(){
+    $user=User::where('id',auth()->user()->id)->first();
+    
+    return view('Admin_asstes.edit_profile',compact('user'));
+}
+public function update_profile(Request $request){
+    $user=User::find($request->id);
+    $user->name=$request->name;
+    
+    $user->email=$request->email;
+   
+
+   
+
+ 
+    $user->save();
+    // dd($user);
+    return redirect('admin/index')->with("success","Successfully Updated Admin Profile");
+    
+    
+}
+public function update_password(Request $request){
+    $user=User::find($request->id);
+    if ($request->password != null && $request->old_pass) {
+
+        $request->validate([
+
+            'password' => ['required', 'confirmed'],
+
+
+        ]);
+
+
+        if (\Hash::check($request->old_pass, $user->password)) {
+            $user->fill([
+                'password' => \Hash::make($request->password)
+            ])->save();
+            return back()->with('success', 'Password updated successfully');
+
+        } else {
+            return back()->with('error', 'Password does not match');
+        }
+    }
+
+    return back()->with('error', 'Enter password to update');
+    return back()->with("success","Password Updated Successfully");
+    
+    
 }
 }

@@ -111,13 +111,7 @@ ul li a:hover {
 }
 
 .placeOrder {
-    border-right: 5px solid rgb(222, 221, 221);
-}
-
-.orderDetails {
-    border-bottom: 5px solid rgb(222, 221, 221);
-    /*background-color: #f8f9d2;*/
-    /*background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 74%);*/
+    border-right: 1px solid rgb(222, 221, 221);
 }
 
 .productOptions {
@@ -126,9 +120,8 @@ ul li a:hover {
     border: grey;
     border-radius: 5px; */
     background-color: #fff;
-    box-shadow: 3px 2px 5px grey;
-    border-left: 2px solid rgb(194, 192, 192);
-    border-top: 2px solid rgb(194, 192, 192);
+    border-radius: 25px !important;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     border-radius: 5px;
 }
 
@@ -138,10 +131,19 @@ ul li a:hover {
 
 .colorOptions {
     background-color: #fff;
-    box-shadow: 3px 2px 5px grey;
-    border-left: 2px solid rgb(194, 192, 192);
-    border-top: 2px solid rgb(194, 192, 192);
+    border-radius: 25px !important;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     border-radius: 5px;
+}
+
+.Border_1 {
+    padding-top: 20px !important;
+    /* border: 1px solid #dee2e6 !important; */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.border-right {
+    border-right: 1px solid #dee2e6;
 }
 
 .optionsHeading {
@@ -149,18 +151,16 @@ ul li a:hover {
 }
 
 .lettering {
+    border-radius: 25px !important;
     background-color: #fff;
-    box-shadow: 3px 2px 5px grey;
-    border-left: 2px solid rgb(194, 192, 192);
-    border-top: 2px solid rgb(194, 192, 192);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     border-radius: 5px;
 }
 
 .logos {
     background-color: #fff;
-    box-shadow: 3px 2px 5px grey;
-    border-left: 2px solid rgb(194, 192, 192);
-    border-top: 2px solid rgb(194, 192, 192);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 25px !important;
     border-radius: 5px;
 }
 

@@ -17,7 +17,7 @@
         <div class="col-lg-4 col-sm-4 col-12">
             <div class="card">
                 <div class="card-header  align-items-start p-2">
-                    <h2>20</h2>
+                    <h2>{{App\Models\sport::count()}}</h2>
                     <p>Sports</p>
                 </div>
 
@@ -27,7 +27,7 @@
             <div class="card">
 
                     <div class="card-header  align-items-start p-2">
-                        <h2>20</h2>
+                        <h2>{{App\Models\product::count()}}</h2>
                         <p>Products</p>
                     </div>
 
@@ -135,35 +135,48 @@
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <script>
     window.onload = function () {
-
+    
     var chart = new CanvasJS.Chart("chartContainer", {
         animationEnabled: true,
-        theme: "light2", // "light1", "light2", "dark1", "dark2"
-        title:{
-            text: "Work Order"
+        title: {
+            text: "Monthly Chart"
+        },
+        axisX: {
+            
+            valueFormatString: "MMM YY"
         },
         axisY: {
-            title: "Stats"
+            title: "Number of Orders",
+            titleFontColor: "#4F81BC",
+            includeZero: true,
+            suffix: "mn"
         },
         data: [{
-            type: "column",
-            showInLegend: true,
-            legendMarkerColor: "grey",
-            legendText: "MMbbl = one million barrels",
+            indexLabelFontColor: "darkSlateGray",
+            name: "views",
+            type: "area",
+            // yValueFormatString: "#,##0.0mn",
             dataPoints: [
-                { y: 300878, label: "Users" },
-                { y: 266455,  label: "Sports" },
-                { y: 169709,  label: "Products" },
-                { y: 158400,  label: "Orders" },
-                // { y: 142503,  label: "Iraq" },
-                // { y: 101500, label: "Kuwait" },
-                // { y: 97800,  label: "UAE" },
-                // { y: 80000,  label: "Russia" }
+                @foreach ($orders as $sensors1)
+                            {
+                                // x: new Date(2017,06,24),
+                                x:new Date( <?php
+                                    echo Date('Y,m,d',Strtotime($sensors1->months));
+                                    ?>),
+                                y: <?php
+                                    echo $sensors1->total;
+                                    ?>,
+                                    label: <?php
+
+                                    echo '"'.$sensors1->monthKey.'"'.',';
+                                    ?>   
+                            },
+                            @endforeach
             ]
         }]
     });
     chart.render();
-
+    
     }
     </script>
 @endsection

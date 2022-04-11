@@ -17,6 +17,7 @@
                     </div>
                 </div>
                 <div class="col-lg-9 col-xl-9 col-md-9 col-12 greyWhiteGradiant" id="sectionadd">
+                   <form action="{{url('user/add/roaster')}}" method="POST" enctype="multipart/form-data">
                     <div class="row mx-3 my-3 bg-white roster-border">
                         <div class="col-12">
                             <h3 class="pt-4 pl-4">ROSTER</h3>
@@ -70,6 +71,7 @@
                             </div>
                         </div>
                     </div>
+                   </form>
                 </div>
 
 

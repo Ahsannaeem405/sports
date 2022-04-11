@@ -11,9 +11,11 @@
 </style>
 @section('content')
     <section>
-        <div class="d-flex justify-content-end align-items-center pl-4 pt-4">
+        <form action="{{url('user/add/roaster')}}" method="POST" enctype="multipart/form-data">
+      @csrf
+            <div class="d-flex justify-content-end align-items-center pl-4 pt-4">
             <a href="{{url('print')}}"class="pr-3"> <input type="button" value="Print" class="btn btn-primary mr-2"></a>
-            <a href="{{url('#')}}"class="pr-3"> <input type="button" value="Save" class="btn btn-success mr-2"></a>
+           <input type="submit" value="Save" class="btn btn-success mr-2">
 
         </div>
         <div class="container-fluid">
@@ -24,7 +26,7 @@
                     </div>
                 </div>
                 <div class="col-lg-9 col-xl-9 col-md-9 col-12 greyWhiteGradiant" id="sectionadd">
-                   <form action="{{url('user/add/roaster')}}" method="POST" enctype="multipart/form-data">
+                   
                     <div class="row mx-3 my-3 bg-white roster-border">
                         <div class="col-12">
                             <h3 class="pt-4 pl-4">ROSTER</h3>
@@ -33,7 +35,7 @@
                         <div class="col-12 pt-4 d-flex justify-content-between">
                             <div>
                                 <div class="uploadLogo mt-2 p-2">
-                                    <input name="file" type="file"  class="dropify" data-height="100" />
+                                    <input name="image" type="file"  class="dropify" data-height="100" />
 
                                   {{-- <img src="./img/uploadicon.png" class="img-fluid"> --}}
                                 </div>
@@ -49,7 +51,7 @@
     background: transparent;
     color: black;
    border: none;
-    outline: none;color: black" name="" id="" cols="20" rows="3">Roaster name</textarea> --}}
+    outline: none;color: black" name="name" id="" cols="20" rows="3">Roaster name</textarea> --}}
     <h4>Roaster Name</h4>
                         </div>
                         <div class="col-12 pt-4">
@@ -67,11 +69,11 @@
                                     </thead>
                                     <tbody id="add_row1">
                                     <tr class="rowadd">
-                                        <th scope="row"><input type="text" class="form-control"></th>
-                                        <td><input type="text" class="form-control"></td>
-                                        <td><input type="text" class="form-control"></td>
-                                        <td><input type="text" class="form-control"></td>
-                                        <td><input type="text" class="form-control"></td>
+                                        <th scope="row"><input type="text" class="form-control" name="number"></th>
+                                        <td><input type="text" class="form-control" name="name"></td>
+                                        <td><input type="text" class="form-control" name="top_size"></td>
+                                        <td><input type="text" class="form-control" name="bottom_size"></td>
+                                        <td><input type="text" class="form-control" name="notes"></td>
                                         <td></td>
                                     </tr>
 
@@ -80,12 +82,13 @@
                             </div>
                         </div>
                     </div>
-                   </form>
+                  
                 </div>
 
 
             </div>
         </div>
+    </form>
     </section>
 
     <script>
@@ -143,11 +146,11 @@ var html=`  <div class="row mx-3 my-3 bg-white roster-border" id="roster-border$
                                     </thead>
                                     <tbody id="add_row${val2}">
                                     <tr class="rowadd">
-                                        <th scope="row"><input type="text" class="form-control"></th>
-                                        <td><input type="text" class="form-control"></td>
-                                        <td><input type="text" class="form-control"></td>
-                                        <td><input type="text" class="form-control"></td>
-                                        <td><input type="text" class="form-control"></td>
+                                        <th scope="row"><input type="text" class="form-control"name="number"></th>
+                                        <td><input type="text" class="form-control"name="name"></td>
+                                        <td><input type="text" class="form-control"name="top_size"></td>
+                                        <td><input type="text" class="form-control"name="bottom_size"></td>
+                                        <td><input type="text" class="form-control"name="notes"></td>
                                         <td></td>
                                     </tr>
 

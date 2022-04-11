@@ -358,7 +358,7 @@
                             <div class="col-4 border-right p-3">
                                 <form>
                                     <div class="form-group ">
-                                        <label for="product"><b>Product:</b></label>
+                                        <label for="product"><b>Location:</b></label>
                                         <input type="text" class="form-control form-control-sm" id="location">
                                     </div>
 
@@ -377,7 +377,7 @@
                             <div class="col-4 border-right p-3">
                                 <form>
                                     <div class="form-group ">
-                                        <label for="product"><b>Product:</b></label>
+                                        <label for="product"><b>Location:</b></label>
                                         <input type="text" class="form-control form-control-sm" id="location">
                                     </div>
 
@@ -396,7 +396,7 @@
                             <div class="col-4 p-3">
                                 <form>
                                     <div class="form-group ">
-                                        <label for="product"><b>Product:</b></label>
+                                        <label for="product"><b>Location:</b></label>
                                         <input type="text" class="form-control form-control-sm" id="location">
                                     </div>
 

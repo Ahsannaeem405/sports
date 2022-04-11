@@ -1,14 +1,18 @@
 @extends('user.layout.header')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script type="text/javascript" src="https://jeremyfagis.github.io/dropify/dist/js/dropify.min.js"></script>
+
+ 
 <link rel="stylesheet" type="text/css" href="https://jeremyfagis.github.io/dropify/dist/css/dropify.min.css">
  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
 <style>
     .table2,
     .th2,
     .td2 {
         border: 1px solid black;
         border-collapse: collapse;
+    }
+    .select2-multiple{
+      width: 260px;
     }
 </style>
 
@@ -67,10 +71,10 @@
                 <h3 class="productHeading pt-3 text-center">Product Options</h3>
                 <form class="px-3 py-2">
                   <label for="product"><b>Product:</b></label><div></div>
-                  <div class="">
+                  <div class="form-group">
                   <label for="fabricChoice" class="pt-2"><b>Fabric Choice:</b></label>
-                  <select class="form-control form-control-sm" aria-label=".form-control-sm example">
-                    <option selected>Select Fabric</option>
+                  <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                    
                     <option value="ClimaPro">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -79,9 +83,8 @@
 
                 <div class="form-group">
                   <label for="neckStyle" class=""><b>Neck Style:</b></label>
-                  <select class="form-control form-control-sm" aria-label=".form-control-sm">
-                    <option selected>Select Fabric</option>
-                    <option value="ClimaPro">One</option>
+                  <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                      <option value="ClimaPro">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                   </select>
@@ -94,9 +97,8 @@
 
                 <div class="form-group">
                   <label for="jerseyFit" class=""><b>Jersey Fit/Style:</b></label>
-                  <select class="form-control form-control-sm" aria-label=".form-control-sm example">
-                    <option selected>Select Fabric</option>
-                    <option value="ClimaPro">One</option>
+                  <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                      <option value="ClimaPro">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                   </select>
@@ -104,9 +106,8 @@
 
                 <div class="form-group">
                   <label for="shortInseam" class=""><b>Short Inseam:</b></label>
-                  <select class="form-control form-control-sm" aria-label=".form-control-sm example">
-                    <option selected>Select Fabric</option>
-                    <option value="ClimaPro">One</option>
+                  <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                      <option value="ClimaPro">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                   </select>
@@ -126,9 +127,8 @@
                 <form class="px-3 py-2">
                   <div class="">
                   <label for="Neck" class=""><b>Neck:</b></label>
-                  <select class="form-control form-control-sm" aria-label=".form-control-sm example">
-                    <option selected>Select Fabric</option>
-                    <option value="ClimaPro">One</option>
+                  <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                      <option value="ClimaPro">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                   </select>
@@ -136,9 +136,8 @@
 
                 <div class="form-group">
                   <label for="Accent" class=""><b>Accent:</b></label>
-                  <select class="form-control form-control-sm" aria-label=".form-control-sm">
-                    <option selected>Select Fabric</option>
-                    <option value="ClimaPro">One</option>
+                  <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                      <option value="ClimaPro">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                   </select>
@@ -146,9 +145,8 @@
 
                 <div class="form-group">
                   <label for="buLogo" class=""><b>BU Logo:</b></label>
-                  <select class="form-control form-control-sm" aria-label=".form-control-sm example">
-                    <option selected>Select Fabric</option>
-                    <option value="ClimaPro">One</option>
+                  <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                      <option value="ClimaPro">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                   </select>
@@ -156,9 +154,8 @@
 
                 <div class="form-group">
                   <label for="Body" class=""><b>BODY:</b></label>
-                  <select class="form-control form-control-sm" aria-label=".form-control-sm example">
-                    <option selected>Select Fabric</option>
-                    <option value="ClimaPro">One</option>
+                  <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                      <option value="ClimaPro">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                   </select>
@@ -234,13 +231,22 @@ Color
 
                     <div class="form-group">
                       <label for="mainColor" class=""><b>Main Color:</b></label>
-                        <input type="text" class="form-control">
+                      <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                    
+                    <option value="ClimaPro">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
                     </div>
 
                     <div class="form-group">
                       <label for="trimColor" class=""><b>Trim Color:</b></label>
-                        <input type="text" class="form-control">
-                    </div>
+                       <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                    
+                    <option value="ClimaPro">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>                    </div>
 
                     <div class="form-group ">
                       <label for="fontName"><b>Font Name:</b></label>
@@ -249,7 +255,12 @@ Color
 
                     <div class="form-group">
                       <label for="size" class=""><b>Size:</b></label>
-                        <input type="text" class="form-control">
+                       <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                    
+                    <option value="ClimaPro">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
                     </div>
 
 
@@ -317,7 +328,7 @@ Color
                     <div class="form-group">
                       <label for="size" class=""><b>Size:</b></label>
                       <select class="form-control form-control-sm" aria-label=".form-control-sm example">
-                        <option selected>Select Fabric</option>
+                        
                         <option value="ClimaPro">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
@@ -336,7 +347,7 @@ Color
                     <div class="form-group">
                       <label for="size" class=""><b>Size:</b></label>
                       <select class="form-control form-control-sm" aria-label=".form-control-sm example">
-                        <option selected>Select Fabric</option>
+                        
                         <option value="ClimaPro">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
@@ -355,7 +366,7 @@ Color
                     <div class="form-group">
                       <label for="size" class=""><b>Size:</b></label>
                       <select class="form-control form-control-sm" aria-label=".form-control-sm example">
-                        <option selected>Select Fabric</option>
+                        
                         <option value="ClimaPro">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
@@ -370,6 +381,21 @@ Color
         </div>
     </div>
 </section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" defer></script>
+      <script type="text/javascript" src="https://jeremyfagis.github.io/dropify/dist/js/dropify.min.js"></script>
+
+      <script>
+        $(document).ready(function() {
+            // Select2 Multiple
+            $('.select2-multiple').select2({
+                placeholder: "Select",
+                allowClear: true
+            });
+
+        });
+
+    </script>
 <script>
     $('.dropify').dropify();
 </script>
@@ -446,12 +472,22 @@ $('#btn_text').click(function() {
 
                     <div class="form-group">
                       <label for="mainColor" class=""><b>Main Color:</b></label>
-                        <input type="text" class="form-control">
+                         <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                    
+                    <option value="ClimaPro">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
                     </div>
 
                     <div class="form-group">
                       <label for="trimColor" class=""><b>Trim Color:</b></label>
-                        <input type="text" class="form-control">
+                        <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                    
+                    <option value="ClimaPro">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
                     </div>
 
                     <div class="form-group">
@@ -461,7 +497,12 @@ $('#btn_text').click(function() {
 
                     <div class="form-group">
                       <label for="size" class=""><b>Size:</b></label>
-                        <input type="text" class="form-control">
+                        <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                    
+                    <option value="ClimaPro">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
                     </div>
 
                   </div>
@@ -476,4 +517,7 @@ $('#btn_text').click(function() {
 
 });
 </script>
+ 
+       
+
 @endsection

@@ -92,7 +92,7 @@ class AdminController extends Controller
         $user->Bio=$request->bio;
         $user->save();
         // dd($user);
-        return back()->with("success","Successfully Added");
+        return redirect('admin/users')->with("success","Successfully Updated Profile");
     }
     function add_sports(Request $request){
         $sport=new Sport();

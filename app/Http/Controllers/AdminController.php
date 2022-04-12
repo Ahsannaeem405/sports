@@ -6,7 +6,7 @@ use App\Models\Option;
 use App\Models\Product;
 use App\Models\Sport;
 use App\Models\User;
-use App\models\order;
+use App\Models\order;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -15,7 +15,7 @@ class AdminController extends Controller
 {
     function index(){
        
-      $orders = Order::select(
+      $orders = order::select(
          DB::raw('count(*) as total'),
             DB::raw("DATE_FORMAT(created_at,'%M %Y') as months"),
             DB::raw("DATE_FORMAT(created_at,'%M') as monthKey")

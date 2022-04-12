@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\optionController;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -16,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('auth/login');
+});
 Route::get('/page1', function () {
     return view('user.home');
 });
@@ -61,6 +63,13 @@ Route::prefix('/admin')->middleware(['SessionCheck', 'auth'])->group(function ()
     Route::post('update_option',[AdminController::class,'update_option']);
     Route::get('orders',[AdminController::class,'orders']);
     Route::get('order_detail/1',[AdminController::class,'order_detail']);
+    Route::get('get_product_option',[AdminController::class,'get_product_option']);
+    Route::post('/save_product_option',[optionController::class,'save_product_option']);
+    Route::get('/get_edit_product',[optionController::class,'get_edit_product']);
+
+
+
+
 
 
 

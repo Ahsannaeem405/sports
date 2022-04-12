@@ -11,18 +11,26 @@
 </style>
 @section('content')
     <section>
-        <form action="{{url('user/add/roaster')}}" method="POST" enctype="multipart/form-data">
-      @csrf
-            <div class="d-flex justify-content-end align-items-center pl-4 pt-4">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3">
+                <div class="d-flex justify-content-start pt-4"> <a href="#"> <input type="button" value="Go Back" class="btn btn-success mr-2"></a></div>
+                </div>
+                <div class="col-9">
+                <div class="d-flex justify-content-end align-items-center pl-4 pt-4">
             <a href="{{url('print')}}"class="pr-3"> <input type="button" value="Print" class="btn btn-primary mr-2"></a>
            <input type="submit" value="Save" class="btn btn-success mr-2">
 
         </div>
+                </div>
+            </div>
+        </div>
+       
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-3 col-xl-3 col-md-3 col-12 pt-5 ">
-                    <div class="py-5 text-center">
-                       <button class="btn btn-primary" id="btn_addsection" type="button" add_new="1"><i class="fas fa-plus"></i>&nbsp; Add New Section</button>
+                <div class="col-lg-3 col-xl-3 col-md-3 col-12">
+                    <div class="py-5 text-center pt-5">
+                       <button class="btn btn-primary" id="btn_addsection" type="button" add_new="1"><i class="fas fa-plus"></i>&nbsp; Add New Roster</button>
                     </div>
                 </div>
                 <div class="col-lg-9 col-xl-9 col-md-9 col-12 greyWhiteGradiant" id="sectionadd">
@@ -56,8 +64,8 @@
                         </div>
                         <div class="col-12 pt-4">
                             <div class="table-responsive">
-                                <table class="table table-bordered table-danger table-striped table-hover">
-                                    <thead>
+                                <table class="table table-bordered table-striped table-hover">
+                                    <thead class="thead-dark">
                                     <tr>
                                         <th scope="col">Number</th>
                                         <th scope="col">Name(if Applicable)</th>

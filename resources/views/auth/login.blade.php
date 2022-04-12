@@ -44,7 +44,7 @@
                                     <a href="{{ route('password.request') }}" class="forgot-link">Forgot Password?</a>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <button type="submit" class="btn ">Login</button>
+                                    <button type="submit" class="btn">Login</button>
                                 </div>
                             </form>
                         </div>

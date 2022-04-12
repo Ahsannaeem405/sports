@@ -50,7 +50,7 @@
                                 </div>
 
                                 <div class="d-flex justify-content-center">
-                                    <button type="submit" class="btn ">Reset Password</button>
+                                    <button type="submit" class="btn loginButton">Reset Password</button>
                                 </div>
                             </form>
                         </div>

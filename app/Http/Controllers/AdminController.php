@@ -207,6 +207,12 @@ class AdminController extends Controller
         return view('Admin_asstes.get_product',compact('products'));
         // return response()->json($products);
     }
+    function get_product_option(Request $request){
+        // $products=Product::where('sports_id',$request->id)->get();
+        $id=$request->id;
+        return view('Admin_asstes.get_product_option' ,compact('id'));
+    }
+    
     function add_option(Request $request){
         $validated = $request->validate([
 

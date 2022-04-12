@@ -17,9 +17,9 @@
             </li>
             <li class="{{ Request::is('adminn')? 'active' : '' }}"><a href="{{url('admin/index')}}"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span></a>
             </li>
-            <li class="nav-item has-sub"><a href="#"><i class="feather icon-airplay"></i><span class="menu-title" data-i18n="Ecommerce">User</span></a>
+            <li class="nav-item has-sub"><a href="#"><i class="fa fa-user"></i><span class="menu-title" data-i18n="Ecommerce">User</span></a>
                 <ul class="menu-content">
-                    <li><a href="{{url('/admin/users')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Details">Users</span></a>
+                    <li><a href="{{url('/admin/users')}}"><i class="fa fa-user"></i><span class="menu-item" data-i18n="Details">Users</span></a>
                     </li>
 
 
@@ -38,10 +38,10 @@
 
                 </ul>
             </li>
-            <li class="nav-item has-sub"><a href="#"><i class="feather icon-airplay"></i><span class="menu-title" data-i18n="Ecommerce">Products</span></a>
+            <li class="nav-item has-sub"><a href="#"><i class="fa fa-shopping-basket"></i><span class="menu-title" data-i18n="Ecommerce">Products</span></a>
                 <ul class="menu-content">
 
-                    <li><a href="{{url('/admin/products')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Details">Products</span></a>
+                    <li><a href="{{url('/admin/products')}}"><i class="fa fa-shopping-basket"></i><span class="menu-item" data-i18n="Details">Products</span></a>
                     </li>
 
 
@@ -60,10 +60,10 @@
 
                 </ul>
             </li>
-            <li class="nav-item has-sub"><a href="#"><i class="feather icon-airplay"></i><span class="menu-title" data-i18n="Ecommerce">Orders</span></a>
+            <li class="nav-item has-sub"><a href="#"><i class="fa fa-cart-plus"></i><span class="menu-title" data-i18n="Ecommerce">Orders</span></a>
                 <ul class="menu-content">
 
-                    <li><a href="{{url('/admin/orders')}}"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Details">Orders</span></a>
+                    <li><a href="{{url('/admin/orders')}}"><i class="fa fa-cart-plus"></i><span class="menu-item" data-i18n="Details">Orders</span></a>
                     </li>
 
 

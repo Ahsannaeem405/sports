@@ -1,8 +1,5 @@
 @extends('Admin_asstes.layouts.main')
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script type="text/javascript" src="https://jeremyfagis.github.io/dropify/dist/js/dropify.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://jeremyfagis.github.io/dropify/dist/css/dropify.min.css">
 
 
 @section('content')
@@ -117,9 +114,14 @@
     </div>
   </div>
 
+  {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  --}}
 
-
+  @endsection
+  @section('js')
 <script>
+  @if($errors->has('password'))
+     $("#exampleModal").modal('show');
+  @endif
     $('.dropify').dropify();
 </script>
 @endsection

@@ -1,7 +1,6 @@
 @extends('user.layout.header')
 <link rel="stylesheet" href="{{asset('css/home.css')}}">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script type="text/javascript" src="https://jeremyfagis.github.io/dropify/dist/js/dropify.min.js"></script>
+
 <link rel="stylesheet" type="text/css" href="https://jeremyfagis.github.io/dropify/dist/css/dropify.min.css">
 <style>
     .greyWhiteGradiant{
@@ -9,6 +8,7 @@
         border-left: 1px solid #dee2e6;
     }
 </style>
+
 @section('content')
     <section>
         <form action="{{url('user/add/roaster')}}" method="POST" enctype="multipart/form-data">
@@ -45,7 +45,7 @@
                         <div class="col-12 pt-4 d-flex justify-content-between">
                             <div>
                                 <div class="uploadLogo mt-2 p-2">
-                                    <input name="file[0][]" type="file"  class="dropify" data-height="100" />
+                                    <input name="file[0][]" type="file"  class="dropify" data-height="100" required />
 
                                   {{-- <img src="./img/uploadicon.png" class="img-fluid"> --}}
                                 </div>
@@ -79,7 +79,7 @@
                                     </thead>
                                     <tbody id="add_row1">
                                     <tr class="rowadd">
-                                        <th scope="row"><input type="text" class="form-control" name="number[0][]"></th>
+                                        <th scope="row"><input type="text" size="2"  class="form-control" name="number[0][]"></th>
                                         <td><input type="text" class="form-control" name="sname[0][]"></td>
                                         <td><input type="text" class="form-control" name="top_size[0][]"></td>
                                         <td><input type="text" class="form-control" name="bottom_size[0][]"></td>
@@ -100,7 +100,8 @@
         </div>
     </form>
     </section>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://jeremyfagis.github.io/dropify/dist/js/dropify.min.js"></script>
     <script>
         $( document ).ready(function() {
             var r=1;
@@ -133,7 +134,7 @@ var html=`  <div class="row mx-3 my-3 bg-white roster-border" id="roster-border$
                         <div class="col-12 pt-4 d-flex justify-content-between">
                             <div>
                                 <div class="uploadLogo mt-2 p-2">
-                                    <input name="file[${val3}][]" type="file"  class="dropify" data-height="100" />
+                                    <input name="file[${val3}][]" type="file"  class="dropify"  data-height="100" required/>
 
 
                                 </div>
@@ -153,8 +154,8 @@ var html=`  <div class="row mx-3 my-3 bg-white roster-border" id="roster-border$
                         </div>
                         <div class="col-12 pt-4">
                             <div class="table-responsive">
-                                <table class="table table-bordered table-danger table-striped table-hover">
-                                    <thead>
+                                <table class="table table-bordered table-striped table-hover">
+                                    <thead class="thead-dark">
                                     <tr>
                                         <th scope="col">Number</th>
                                         <th scope="col">Name(if Applicable)</th>
@@ -183,6 +184,7 @@ var html=`  <div class="row mx-3 my-3 bg-white roster-border" id="roster-border$
 
 
 var tableBody = $("#sectionadd").append(html);
+$('.dropify').dropify();
 });
 r++;
   $(document).on('click', '#deletebn', function() {
@@ -251,8 +253,6 @@ var tableBody = $('#add_row' + button_id2 + '').append(html);
      });
 
         </script>
-          <script>
-        $('.dropify').dropify();
-    </script>
+      
 @endsection
 

@@ -37,6 +37,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('admin/admin/app-assets/vendors/css/charts/apexcharts.css')}}">
 
+    @yield('style')
     <style>
         div.dataTables_wrapper div.dataTables_length, div.dataTables_wrapper div.dataTables_filter, div.dataTables_wrapper div.dataTables_info, div.dataTables_wrapper div.dataTables_paginate {
     text-align: right !important;

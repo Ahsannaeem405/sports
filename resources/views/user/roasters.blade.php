@@ -35,7 +35,7 @@
                         <div class="col-12 pt-4 d-flex justify-content-between">
                             <div>
                                 <div class="uploadLogo mt-2 p-2">
-                                    <input name="image" type="file"  class="dropify" data-height="100" />
+                                    <input name="file[0][]" type="file"  class="dropify" data-height="100" />
 
                                   {{-- <img src="./img/uploadicon.png" class="img-fluid"> --}}
                                 </div>
@@ -46,13 +46,13 @@
                             </div>
                         </div>
                         <div class="col-12 pt-5 text-center">
-                            {{-- <textarea style="
+                            <textarea style="
     color: #FFF;
     background: transparent;
     color: black;
    border: none;
-    outline: none;color: black" name="name" id="" cols="20" rows="3">Roaster name</textarea> --}}
-    <h4>Roaster Name</h4>
+    outline: none;color: black" name="name[0][]" id="" cols="20" rows="3">Roaster name</textarea>
+    {{-- <h4>Roaster Name</h4> --}}
                         </div>
                         <div class="col-12 pt-4">
                             <div class="table-responsive">
@@ -69,11 +69,11 @@
                                     </thead>
                                     <tbody id="add_row1">
                                     <tr class="rowadd">
-                                        <th scope="row"><input type="text" class="form-control" name="number"></th>
-                                        <td><input type="text" class="form-control" name="name"></td>
-                                        <td><input type="text" class="form-control" name="top_size"></td>
-                                        <td><input type="text" class="form-control" name="bottom_size"></td>
-                                        <td><input type="text" class="form-control" name="notes"></td>
+                                        <th scope="row"><input type="text" class="form-control" name="number[0][]"></th>
+                                        <td><input type="text" class="form-control" name="sname[0][]"></td>
+                                        <td><input type="text" class="form-control" name="top_size[0][]"></td>
+                                        <td><input type="text" class="form-control" name="bottom_size[0][]"></td>
+                                        <td><input type="text" class="form-control" name="notes[0][]"></td>
                                         <td></td>
                                     </tr>
 
@@ -94,8 +94,11 @@
     <script>
         $( document ).ready(function() {
             var r=1;
+            var row=0;
+           
             $('#btn_addsection').click(function () {
-
+                row++;
+                
                     var val = $(".roster-border").attr('val');
                     var val2 = $(this).attr('add_new');
 
@@ -118,7 +121,7 @@ var html=`  <div class="row mx-3 my-3 bg-white roster-border" id="roster-border$
                         <div class="col-12 pt-4 d-flex justify-content-between">
                             <div>
                                 <div class="uploadLogo mt-2 p-2">
-                                    <input name="file" type="file"  class="dropify" data-height="100" />
+                                    <input name="file[${row}][]" type="file"  class="dropify" data-height="100" />
 
 
                                 </div>
@@ -129,7 +132,12 @@ var html=`  <div class="row mx-3 my-3 bg-white roster-border" id="roster-border$
                             </div>
                         </div>
                         <div class="col-12 pt-5 text-center">
-                          <h4>Roaster Name</h4>
+                            <textarea style="
+    color: #FFF;
+    background: transparent;
+    color: black;
+   border: none;
+    outline: none;color: black" name="name[${row}][]" id="" cols="20" rows="3">Roaster name</textarea>
                         </div>
                         <div class="col-12 pt-4">
                             <div class="table-responsive">
@@ -146,11 +154,11 @@ var html=`  <div class="row mx-3 my-3 bg-white roster-border" id="roster-border$
                                     </thead>
                                     <tbody id="add_row${val2}">
                                     <tr class="rowadd">
-                                        <th scope="row"><input type="text" class="form-control"name="number"></th>
-                                        <td><input type="text" class="form-control"name="name"></td>
-                                        <td><input type="text" class="form-control"name="top_size"></td>
-                                        <td><input type="text" class="form-control"name="bottom_size"></td>
-                                        <td><input type="text" class="form-control"name="notes"></td>
+                                        <th scope="row"><input type="text" class="form-control"name="number[${row}][]"></th>
+                                        <td><input type="text" class="form-control"name="sname[${row}][]"></td>
+                                        <td><input type="text" class="form-control"name="top_size[${row}][]"></td>
+                                        <td><input type="text" class="form-control"name="bottom_size[${row}][]"></td>
+                                        <td><input type="text" class="form-control"name="notes[${row}][]"></td>
                                         <td></td>
                                     </tr>
 
@@ -163,7 +171,6 @@ var html=`  <div class="row mx-3 my-3 bg-white roster-border" id="roster-border$
 
 
 var tableBody = $("#sectionadd").append(html);
-
 });
 r++;
   $(document).on('click', '#deletebn', function() {
@@ -181,11 +188,11 @@ r++;
 val++;
 $(".rowadd").attr('val', val);
 var html=`<tr class="rowadd" id="removeTr">
-                         <th scope="row"><input type="text" class="form-control"></th>
-                            <td><input type="text" class="form-control"></td>
-                            <td><input type="text" class="form-control"></td>
-                            <td><input type="text" class="form-control"></td>
-                            <td><input type="text" class="form-control"></td>
+                         <th scope="row"><input type="text" class="form-control" name="number[${row}][]"></th>
+                         <td><input type="text" class="form-control"name="sname[${row}][]"></td>
+                                        <td><input type="text" class="form-control"name="top_size[${row}][]"></td>
+                                        <td><input type="text" class="form-control"name="bottom_size[${row}][]"></td>
+                                        <td><input type="text" class="form-control"name="notes[${row}][]"></td>
                             <td><i class="fa fa-trash text-danger "id="deletebtn" ></i></td>
                                     </tr>`;
 
@@ -210,11 +217,11 @@ var button_id = $(this).attr("id");
 var button_id2 = $(this).attr("val2");
 
 var html=`<tr class="rowadd" id="removeTr">
-                         <th scope="row"><input type="text" class="form-control"></th>
-                            <td><input type="text" class="form-control"></td>
-                            <td><input type="text" class="form-control"></td>
-                            <td><input type="text" class="form-control"></td>
-                            <td><input type="text" class="form-control"></td>
+                         <th scope="row"><input type="text" class="form-control" name="number[${row}][]"></th>
+                         <td><input type="text" class="form-control"name="sname[${row}][]"></td>
+                                        <td><input type="text" class="form-control"name="top_size[${row}][]"></td>
+                                        <td><input type="text" class="form-control"name="bottom_size[${row}][]"></td>
+                                        <td><input type="text" class="form-control"name="notes[${row}][]"></td>
                             <td><i class="fa fa-trash text-danger "id="deletebtn"></i></td>
                                     </tr>`;
 var tableBody = $('#add_row' + button_id2 + '').append(html);

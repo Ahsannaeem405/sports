@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Sport;
 use App\Models\roaster;
+use App\Models\roaster_detail;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -22,6 +23,52 @@ class UserController extends Controller
         return view('user.option');
     }
     function add_roaster(Request $request){
-        return roaster::get();
+    //    dd($request->all());
+//    dd($request->file);
+        $data2 = [];
+        $roaster_data=[];
+        $fileName=[];
+foreach ($request->name as $item => $v) {
+   
+    foreach ($request->file[$item] as $file => $g) {
+      
+        $extension = $g->extension();
+        $fileName= rand(11111, 99999) . "_." . $extension;
+        $g->move('upload/product/', $fileName);
+    }
+
+         $opt= array([
+                'name' => $request->name[$item],
+                'image' => $fileName,
+         ]);
+        
+        
+            $roaster=roaster::insert($opt);
+            foreach ($request->number[$item] as $key => $value) {
+                $roaster_data[$item][$key]['roaster_id']=$roaster->id;
+                $roaster_data[$item][$key]['number']=$value;
+            }
+
+            foreach ($request->sname[$item] as $key => $value) {
+                $roaster_data[$item][$key]['name']=$value;
+            }
+
+            foreach ($request->top_size[$item] as $key => $value) {
+                $roaster_data[$item][$key]['top_size']=$value;
+            }
+            foreach ($request->bottom_size[$item] as $key => $value) {
+                $roaster_data[$item][$key]['bottom_size']=$value;
+            }
+            foreach ($request->notes[$item] as $key => $value) {
+                $roaster_data[$item][$key]['notes']=$value;
+            }
+            
+        
+}
+
+foreach ($roaster_data as $key => $value) {
+    roaster_detail::insert($value);
+}
+return back();
     }
 }

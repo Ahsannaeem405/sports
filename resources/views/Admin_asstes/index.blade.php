@@ -27,7 +27,7 @@
             <div class="card">
 
                     <div class="card-header  align-items-start p-2">
-                        <h2>{{App\Models\product::count()}}</h2>
+                        <h2>{{App\Models\Product::count()}}</h2>
                         <p>Products</p>
                     </div>
 

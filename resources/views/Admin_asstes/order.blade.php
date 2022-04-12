@@ -19,10 +19,11 @@
 
             <div class="card-header">
                 <h4>Orders</h4>
+                <button class="btn btn-success">New Work Order</button>
             </div>
             <div class="card-content p-3">
                 {{-- <form action="#">
-
+ 
                  <div class="row p-3">
 
                     <div class="col-lg-12 col-12 mt-2">

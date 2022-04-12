@@ -77,7 +77,7 @@
                                     </thead>
                                     <tbody id="add_row1">
                                     <tr class="rowadd">
-                                        <th scope="row"><input type="text" class="form-control" name="number"></th>
+                                        <td scope="row"><input type="text" class="form-control" size="2" name="number"></td>
                                         <td><input type="text" class="form-control" name="name"></td>
                                         <td><input type="text" class="form-control" name="top_size"></td>
                                         <td><input type="text" class="form-control" name="bottom_size"></td>

@@ -19,7 +19,7 @@
 
             <div class="card-header">
                 <h4>Orders</h4>
-                <button class="btn btn-success">New Work Order</button>
+                <a href="{{url('user/option')}}"><button class="btn btn-success">New Work Order</button></a>
             </div>
             <div class="card-content p-3">
                 {{-- <form action="#">
@@ -50,6 +50,10 @@
                                 <th>Email</th>
                                 <th>Phone</th>
                                 <th>color</th>
+                                <th>Team</th>
+                                <th>Order Number</th>
+                                <th>Date Created</th>
+                                <th>Created By (User)</th>
                                 <th>Order detail</th>
                               
 
@@ -69,6 +73,10 @@
                                 <td>ah@mail.com</td>
                                 <td>033456789</td>
                                 <td>Black</td>
+                                <td>UAE</td>
+                                <td>1122354</td>
+                                <td>12/02022</td>
+                                <td>Hamza</td>
                                 <td ><a href="{{url('admin/order_detail/1')}}"> <button type="button" class="btn btn-primary ml-lg-1 ml-md-1 mt-1"  data-toggle="modal" data-target="#exampleModal">
                                     Order Detail
                                   </button></a></td>

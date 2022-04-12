@@ -16,7 +16,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-3">
-                <div class="d-flex justify-content-start pt-4"> <a href="#"> <input type="button" value="Go Back" class="btn btn-success mr-2"></a></div>
+                <div class="d-flex justify-content-start pt-4"> <a href="{{url('user/option')}}"> <input type="button" value="Go Back" class="btn btn-success mr-2"></a></div>
                 </div>
                 <div class="col-9">
                 <div class="d-flex justify-content-end align-items-center pl-4 pt-4">
@@ -61,8 +61,8 @@
     background: transparent;
     color: black;
    border: none;
-    outline: none;color: black" name="name[0][]" id="" cols="20" rows="3">Roaster name</textarea>
-    {{-- <h4>Roaster Name</h4> --}}
+    outline: none;color: black" name="name[0][]" id="" cols="20" rows="3">Roster name</textarea>
+    {{-- <h4>Roster Name</h4> --}}
                         </div>
                         <div class="col-12 pt-4">
                             <div class="table-responsive">
@@ -149,7 +149,7 @@ var html=`  <div class="row mx-3 my-3 bg-white roster-border" id="roster-border$
     background: transparent;
     color: black;
    border: none;
-    outline: none;color: black" name="name[${val3}][]" id="" cols="20" rows="3">Roaster name</textarea>
+    outline: none;color: black" name="name[${val3}][]" id="" cols="20" rows="3">Roster name</textarea>
                         </div>
                         <div class="col-12 pt-4">
                             <div class="table-responsive">

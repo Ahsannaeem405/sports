@@ -13,7 +13,7 @@
 <body>
     <section class="login-page">
         <div class="container">
-            <div class="row d-flex justify-content-center align-items-center pt-5" style="height: 100vh">
+            <div class="row d-flex justify-content-center align-items-center py-5" style="height: 100vh">
                 <div class="col-12 col-xl-4 col-lg-6 col-md-8">
                     <div class="login-details">
                         <div class="logo mx-auto pt-4">

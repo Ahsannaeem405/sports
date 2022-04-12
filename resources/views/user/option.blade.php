@@ -40,7 +40,7 @@
                         </div>
                         <div class="form-group d-flex">
                             <label for="orderNumber"><b>Order Number:</b></label>
-                            <input type="text" class="ml-2 mt-3 h-100 form-control form-control-sm w-100 " id="orderNumber">
+                            <input type="text" class="mt-3 h-100 form-control form-control-sm" id="orderNumber">
                         </div>
                         <div class="">
                             <label for="ID"><b>WO ID:</b><span class="pl-2">auto generate code</span></label>
@@ -49,15 +49,15 @@
                             <div class="form-group">
                                 <label for="location"><b>Reorder:</b></label>
                                 <input type="checkbox">
-                            </div>
+                            </div>  
                             <div class="form-group d-flex">
                                 <label for="previousOrderNum"><b>Previous Order Number:</b></label>
-                                <input type="text" class="ml-2 mt-2 form-control form-control-sm w-50 h-100 " id="previousOrderNum">
+                                <input type="text" class="mt-3 h-100 w-50 form-control form-control-sm" id="previousOrderNum">
                             </div>
                         </div>
 <div>
     <button class="btn btn-success">Save</button>
-    <button class="btn btn-success">Print</button>
+    <button class="btn btn-danger">Print</button>
 
 </div>
 
@@ -84,7 +84,7 @@
                         <div></div>
                         <div class="form-group d-flex">
                             <label for="fabricChoice" class=" mr-2"><b>Fabric Choice:</b></label>
-                            <select class=" w-100 ml-2  w-100 select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
                                 <option value="ClimaPro">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
@@ -93,7 +93,7 @@
 
                         <div class="form-group d-flex">
                             <label for="neckStyle" class="mr-2"><b>Neck Style:</b></label>
-                            <select class=" w-100 select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
                                 <option value="ClimaPro">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
@@ -107,7 +107,7 @@
 
                         <div class="form-group d-flex">
                             <label for="jerseyFit" class="mr-2"><b>Jersey Fit/Style:</b></label>
-                            <select class=" w-100 select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
                                 <option value="ClimaPro">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
@@ -116,7 +116,7 @@
 
                         <div class="form-group d-flex">
                             <label for="shortInseam" class="mr-2"><b>Short Inseam:</b></label>
-                            <select class=" w-100  select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
                                 <option value="ClimaPro">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
@@ -137,7 +137,7 @@
                             <form class="px-3 py-2">
                                 <div class="form-group d-flex">
                                     <label for="Neck" class="mr-2"><b>Neck:</b></label>
-                                    <select class=" w-100 select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                    <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
                                         <option value="ClimaPro">One</option>
                                         <option value="2">Two</option>
                                         <option value="3">Three</option>
@@ -146,7 +146,7 @@
 
                                 <div class="form-group d-flex">
                                     <label for="Accent" class="mr-2"><b>Accent:</b></label>
-                                    <select class=" w-100 select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                    <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
                                         <option value="ClimaPro">One</option>
                                         <option value="2">Two</option>
                                         <option value="3">Three</option>
@@ -155,7 +155,7 @@
 
                                 <div class="form-group d-flex">
                                     <label for="buLogo" class="mr-2"><b>BU Logo:</b></label>
-                                    <select class=" w-100 select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                    <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
                                         <option value="ClimaPro">One</option>
                                         <option value="2">Two</option>
                                         <option value="3">Three</option>
@@ -164,7 +164,7 @@
 
                                 <div class="form-group d-flex">
                                     <label for="Body" class="mr-2"><b>BODY:</b></label>
-                                    <select class=" w-100 select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                    <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
                                         <option value="ClimaPro">One</option>
                                         <option value="2">Two</option>
                                         <option value="3">Three</option>
@@ -245,7 +245,7 @@
 
                                     <div class="form-group d-flex">
                                         <label for="mainColor" class="mr-2 text-end"><b>Main Color:</b></label>
-                                        <select class="ml-2 mt-3 h-100 w-100 select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                        <select class="mt-3 select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
 
                                             <option value="ClimaPro">One</option>
                                             <option value="2">Two</option>
@@ -255,7 +255,7 @@
 
                                     <div class="form-group d-flex">
                                         <label for="trimColor" class="mr-2"><b>Trim Color:</b></label>
-                                        <select class="ml-2 h-100 w-100 select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                        <select class="mt-3 select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
 
                                             <option value="ClimaPro">One</option>
                                             <option value="2">Two</option>
@@ -265,12 +265,12 @@
 
                                     <div class="form-group d-flex">
                                         <label for="fontName"><b>Font Name:</b></label>
-                                        <input type="text" class="ml-2 mt-3 h-100 form-control form-control-sm w-100 " id="location">
+                                        <input type="text" class="mt-3 h-100 form-control form-control-sm" id="location">
                                     </div>
 
                                     <div class="form-group d-flex">
                                         <label for="size" class="mr-2"><b>Size:</b></label>
-                                        <select class=" w-100 select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                        <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
 
                                             <option value="ClimaPro">One</option>
                                             <option value="2">Two</option>
@@ -290,29 +290,29 @@
                                 <div class="col-12 Border_1 pb-5">
                                     <div class="form-group d-flex">
                                         <label for="location"><b>Location:</b></label>
-                                        <input type="text" class="ml-2  form-control form-control-sm" id="location">
+                                        <input type="text" class="ml-2 form-control form-control-sm" id="location">
                                     </div>
 
 
 
                                     <div class="form-group d-flex">
                                         <label for="mainColor" class=""><b>Main Color:</b></label>
-                                        <input type="text" class="ml-2 mt-3 h-100 w-100 form-control form-control-sm">
+                                        <input type="text" class="mt-3 h-100 form-control form-control-sm">
                                     </div>
 
                                     <div class="form-group d-flex">
                                         <label for="trimColor" class=""><b>Trim Color:</b></label>
-                                        <input type="text" class="ml-2 h-100 w-100 form-control form-control-sm">
+                                        <input type="text" class="mt-3 h-100 form-control form-control-sm">
                                     </div>
 
                                     <div class="form-group d-flex">
                                         <label for="fontName"><b>Font Name:</b></label>
-                                        <input type="text" class="ml-2 mt-3 h-100 form-control form-control-sm w-100 " id="location">
+                                        <input type="text" class="mt-3 h-100 form-control form-control-sm" id="location">
                                     </div>
 
                                     <div class="form-group d-flex">
                                         <label for="size" class=""><b>Size:</b></label>
-                                        <input type="text" class="ml-2 w-100 form-control form-control-sm">
+                                        <input type="text" class="ml-2 form-control form-control-sm">
                                     </div>
                                 </div>
                             </div>
@@ -343,14 +343,14 @@
                     <div class="row px-3">
                         <div class="col-4 border-right p-3">
                             <form>
-                                <div class="form-group d-flex">
+                                <div class="form-group d-lg-flex d-xl-flex d-xxl-flex">
                                     <label for="product"><b>Location:</b></label>
                                     <input type="text" class="ml-2 form-control form-control-sm" id="location">
                                 </div>
 
-                                <div class="form-group d-flex">
+                                <div class="form-group d-lg-flex d-xl-flex d-xxl-flex">
                                     <label for="size" class=""><b>Size:</b></label>
-                                    <select class="ml-2 w-100 form-control form-control-sm" aria-label=".form-control-sm example">
+                                    <select class="form-control form-control-sm" aria-label=".form-control-sm example">
 
                                         <option value="ClimaPro">One</option>
                                         <option value="2">Two</option>
@@ -362,14 +362,14 @@
 
                         <div class="col-4 border-right p-3">
                             <form>
-                                <div class="form-group d-flex">
+                                <div class="form-group d-lg-flex d-xl-flex d-xxl-flex">
                                     <label for="product"><b>Location:</b></label>
                                     <input type="text" class="ml-2 form-control form-control-sm" id="location">
                                 </div>
 
-                                <div class="form-group d-flex">
+                                <div class="form-group d-lg-flex d-xl-flex d-xxl-flex">
                                     <label for="size" class=""><b>Size:</b></label>
-                                    <select class=" ml-2 w-100 form-control form-control-sm" aria-label=".form-control-sm example">
+                                    <select class="form-control form-control-sm" aria-label=".form-control-sm example">
 
                                         <option value="ClimaPro">One</option>
                                         <option value="2">Two</option>
@@ -381,14 +381,14 @@
 
                         <div class="col-4 p-3">
                             <form>
-                                <div class="form-group d-flex">
+                                <div class="form-group d-lg-flex d-xl-flex d-xxl-flex">
                                     <label for="product"><b>Location:</b></label>
-                                    <input type="text" class="ml-2 form-control form-control-sm" id="location">
+                                    <input type="text" class="form-control form-control-sm" id="location">
                                 </div>
 
-                                <div class="form-group d-flex">
+                                <div class="form-group d-lg-flex d-xl-flex d-xxl-flex">
                                     <label for="size" class=""><b>Size:</b></label>
-                                    <select class="ml-2 w-100 form-control form-control-sm" aria-label=".form-control-sm example">
+                                    <select class="form-control form-control-sm" aria-label=".form-control-sm example">
 
                                         <option value="ClimaPro">One</option>
                                         <option value="2">Two</option>
@@ -450,17 +450,17 @@
 
                     <div class="form-group d-flex">
                       <label for="mainColor" class=""><b>Main Color:</b></label>
-                        <input type="text" class="ml-2 mt-3 h-100 w-100 form-control form-control-sm">
+                        <input type="text" class="mt-3 h-100 form-control form-control-sm">
                     </div>
 
                     <div class="form-group d-flex">
                       <label for="trimColor" class=""><b>Trim Color:</b></label>
-                        <input type="text" class="ml-2 h-100 w-100 form-control form-control-sm">
+                        <input type="text" class="mt-3 h-100 form-control form-control-sm">
                     </div>
 
                     <div class="form-group d-flex">
                       <label for="fontName"><b>Font Name:</b></label>
-                      <input type="text" class="ml-2 mt-3 h-100 form-control form-control-sm w-100 " id="location">
+                      <input type="text" class="mt-3 h-100 form-control form-control-sm" id="location">
                     </div>
 
                     <div class="form-group d-flex">
@@ -499,7 +499,7 @@
 
                     <div class="form-group d-flex">
                       <label for="mainColor" class="mr-2"><b>Main Color:</b></label>
-                         <select class="ml-2 mt-3 h-100 w-100 select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                         <select class="mt-3 select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
 
                     <option value="ClimaPro">One</option>
                     <option value="2">Two</option>
@@ -509,7 +509,7 @@
 
                     <div class="form-group d-flex">
                       <label for="trimColor" class="mr-2"><b>Trim Color:</b></label>
-                        <select class="ml-2 h-100 w-100 select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                        <select class="mt-3 select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
 
                     <option value="ClimaPro">One</option>
                     <option value="2">Two</option>
@@ -519,12 +519,12 @@
 
                     <div class="form-group d-flex">
                       <label for="fontName"><b>Font Name:</b></label>
-                      <input type="text" class="ml-2 mt-3 h-100 form-control form-control-sm w-100 " id="location">
+                      <input type="text" class="mt-3 h-100 form-control form-control-sm" id="location">
                     </div> 
 
                     <div class="form-group d-flex">
                       <label for="size" class="mr-2"><b>Size:</b></label>
-                        <select class=" w-100 select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                        <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
 
                     <option value="ClimaPro">One</option>
                     <option value="2">Two</option>

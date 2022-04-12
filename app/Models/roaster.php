@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class roaster extends Model
 {
+    protected $fillable = [
+        'name','image'
+    ];
     use HasFactory;
 }

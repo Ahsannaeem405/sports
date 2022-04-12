@@ -1,5 +1,9 @@
 <meta name="csrf-token" content="{{ csrf_token() }}" />
-
+<style type="text/css">
+    .select2-selection{
+        width: 400px!important;
+    }
+</style>
 <div class="col-12 mt-2">
     <div class="row">
         <div class="col-6">
@@ -68,36 +72,36 @@
                             <div class="col-lg-12 my-2">
                                 Neck
                                 <div class="float-right">
-                                    <i class="fas fa-plus mr-1 pluscolor" data-target="#exampleModal" data-toggle="modal">
+                                    <i class="fas fa-plus mr-1 pluscolor pro_op" val="Color Version" val2="Neck">
                                     </i>
-                                    <i class="fas fa-edit editcolor">
+                                    <i class="fas fa-edit editcolor pro_edit" val="Color Version" val2="Neck" val3="{{$id}}">
                                     </i>
                                 </div>
                             </div>
                             <div class="col-lg-12 my-2">
                                 Acent
                                 <div class="float-right">
-                                    <i class="fas fa-plus mr-1 pluscolor" data-target="#exampleModal" data-toggle="modal">
+                                    <i class="fas fa-plus mr-1 pluscolor pro_op" val=" Color Version" val2="Acent">
                                     </i>
-                                    <i class="fas fa-edit editcolor">
+                                    <i class="fas fa-edit editcolor pro_edit" val="Color Version" val2="Acent" val3="{{$id}}">
                                     </i>
                                 </div>
                             </div>
                             <div class="col-lg-12 my-2">
                                 Bu logo
                                 <div class="float-right">
-                                    <i class="fas fa-plus mr-1 pluscolor" data-target="#exampleModal" data-toggle="modal">
+                                    <i class="fas fa-plus mr-1 pluscolor pro_op" val="Color Version" val2="Bu logo">
                                     </i>
-                                    <i class="fas fa-edit editcolor">
+                                    <i class="fas fa-edit editcolor pro_edit" val="Color Version" val2="Bu logo" val3="{{$id}}">
                                     </i>
                                 </div>
                             </div>
                             <div class="col-lg-12 my-2">
                                 Body
                                 <div class="float-right">
-                                    <i class="fas fa-plus mr-1 pluscolor" data-target="#exampleModal" data-toggle="modal">
+                                    <i class="fas fa-plus mr-1 pluscolor pro_op" val="Color Version" val2="Body">
                                     </i>
-                                    <i class="fas fa-edit editcolor">
+                                    <i class="fas fa-edit editcolor pro_edit" val="Color Version" val2="Body" val3="{{$id}}">
                                     </i>
                                 </div>
                             </div>
@@ -123,12 +127,12 @@
                 <div aria-labelledby="headingThree" class="collapse " data-parent="#accordion3" id="collapseThree">
                     <div class="">
                         <div class="col-lg-12 my-2">
-                            Color 1
+                            Color 
                             <div class="float-right">
-                                <i class="fas fa-plus mr-1 pluscolor" data-target="#exampleModal" data-toggle="modal">
-                                </i>
-                                <i class="fas fa-edit editcolor">
-                                </i>
+                                <i class="fas fa-plus mr-1 pluscolor pro_op" val="Color" val2="Color">
+                                    </i>
+                                    <i class="fas fa-edit editcolor pro_edit" val="Color" val2="Color" val3="{{$id}}">
+                                    </i>
                             </div>
                         </div>
                        
@@ -153,10 +157,12 @@
                     <div class="">
     
                         <div class="col-lg-12   my-2">
-                         Size 1
+                         Size
                             <div class="float-right">
-                                <i class="fas fa-plus mr-1 pluscolor" data-toggle="modal" data-target="#exampleModal"></i>
-                                <i class="fas fa-edit editcolor"></i>
+                                <i class="fas fa-plus mr-1 pluscolor pro_op" val="Size" val2="Size">
+                                    </i>
+                                    <i class="fas fa-edit editcolor pro_edit" val="Size" val2="Size" val3="{{$id}}">
+                                    </i>
                             </div>
                         </div>
                         
@@ -232,7 +238,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">
-                                Add Product Option
+                                Update Product Option
                             </h5>
                             <button aria-label="Close" class="close" data-dismiss="modal" type="button">
                                 <span aria-hidden="true">
@@ -240,7 +246,7 @@
                                 </span>
                             </button>
                         </div>
-                        <form  method="POST" enctype="multipart/form-data" id="myform">
+                        <form  method="POST" enctype="multipart/form-data" id="myform2">
                         @csrf
                         <div class="modal-body" id="products_op">
                            
@@ -255,7 +261,7 @@
                                 Close
                             </button>
                             --}}
-                            <button class="btn btn-primary btnSubmit" type="submit">
+                            <button class="btn btn-primary btnSubmit2" type="submit">
                                 Add
                             </button>
                             
@@ -343,6 +349,49 @@
             data: data,
             success: function (data) {
                 $('#exampleModal').modal('hide');
+                swal("Success", "Request Submitted Successfully!", "success");
+
+ 
+                
+ 
+            },
+            error: function (e) {
+ 
+               swal ( "Oops" ,  "Something went wrong!" ,  "error" )
+
+ 
+            }
+        });
+ 
+    });
+    $(".btnSubmit2").click(function (event) {
+ 
+       
+        event.preventDefault();
+        $.ajaxSetup({
+            headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+ 
+       
+        var data = $('#myform2').serializeArray();
+ 
+     
+        console.log(data);
+ 
+      
+ 
+       
+        $("#btnSubmit2").prop("disabled", true);
+ 
+        $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            url: '{{URL::to('admin/update_product_option')}}',
+            data: data,
+            success: function (data) {
+                $('#xlarge').modal('hide');
                 swal("Success", "Request Submitted Successfully!", "success");
 
  

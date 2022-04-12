@@ -29,9 +29,11 @@
             </b>
         </label>
         <br>
-            <input class="pro_vari" name="parent" type="hidden" value="">
-                <input class="pro_vari2" name="chalid" type="hidden" value="">
-                    <select class="form-control js-example-tokenizer" multiple="multiple">
+                <input type="hidden" name="product_id" value="{{$p_id}}">
+
+                <input class="pro_vari" name="parent" type="hidden" value="{{$parent}}">
+                <input class="pro_vari2" name="chalid" type="hidden" value="{{$chalid}}">
+                    <select class="form-control js-example-tokenizer" name="name[]" multiple="multiple">
                         @foreach($products as $row)
                         <option selected="selected">
                             {{$row->property}}

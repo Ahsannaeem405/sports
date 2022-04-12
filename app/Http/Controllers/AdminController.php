@@ -6,7 +6,7 @@ use App\Models\Option;
 use App\Models\Product;
 use App\Models\Sport;
 use App\Models\User;
-use App\models\order;
+use App\Models\order;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;

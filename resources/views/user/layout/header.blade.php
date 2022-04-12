@@ -24,7 +24,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link px-3 py-2" href="#">Home</a>
+                <a class="nav-link px-3 py-2" href="{{url('user/')}}">Home</a>
               </li>
             </ul>
             <form class="d-flex text-center pl-2 pt-lg-0 pt-2">
@@ -44,8 +44,8 @@
 
 @yield('content')
 
-<footer class="footer-bg pt-5">
-    <div class="container-fluid">
+<footer class="footer-bg p-2">
+    {{-- <div class="container-fluid">
       <div class="row">
         <div class="col-lg-4 mb-3 col-sm-12 d-flex justify-content-md-center">
           <div class="d-flex align-items-center"><a class="mb-2" href="#">
@@ -53,7 +53,12 @@
            </a>
         </div>
       </div>
-    </div>
+    </div> --}}
+      <!-- Copyright -->
+  <div class="footer-copyright text-center py-3 text-light">© 2020 Copyright:
+    <a href="#" class="text-light"> <b>WorkOrder.com</b></a>
+  </div>
+  <!-- Copyright -->
   </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

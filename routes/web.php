@@ -29,7 +29,7 @@ Route::get('/print', function () {
 });Route::get('/rosters', function () {
     return view('user.roasters');
 });
-Route::get('/login', function () {
+Route::get('/', function () {
 
     return view('auth.login');
 });
@@ -43,7 +43,9 @@ Route::prefix('/admin')->middleware(['SessionCheck', 'auth'])->group(function ()
     Route::get('/edit_sports/{id}', [AdminController::class, 'edit_sports']);
     Route::get('/edit_user/{id}', [AdminController::class, 'edit_user']);
     Route::get('/options', [AdminController::class, 'options']);
-
+    Route::get('/profile', [AdminController::class, 'edit_profile']);
+    Route::post('update/profile',[AdminController::class,'update_profile']);
+    Route::post('update/password',[AdminController::class,'update_password']);
     Route::get('/edit_option', [AdminController::class, 'edit_option']);
     Route::post('/adduser',[AdminController::class,'adduser']);
     Route::get('delete_user/{id}',[AdminController::class,'delete_user']);
@@ -80,7 +82,7 @@ Route::prefix('/user')->middleware(['UserCheck', 'auth'])->group(function () {
     Route::get('/', [UserController::class, 'index']);
     Route::get('product/{id}',[UserController::class,'product']);
     Route::get('option',[UserController::class,'option']);
-
+    Route::post('add/roaster',[UserController::class,'add_roaster']);
 
 
 });

@@ -32,10 +32,9 @@
             </a>
               </div>
               @empty
-              <div class="col-12 text-center height d-flex" style="
-              justify-content: center;
-              align-items: center;">
-                  <h1>No Sports Available</h1>
+              <div class="col-12 text-center height">
+                  {{-- <h1>No Sports Available</h1> --}}
+                  <img src="{{asset('img/nodata-removebg-preview.png')}}" style="width: 80%" alt="">
               </div>
             @endforelse
 

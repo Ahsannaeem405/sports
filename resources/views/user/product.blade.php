@@ -3,8 +3,8 @@
 @section('content')
 
 <div class="container">
-    <div class="row pt-5">
-        <div class="col-12 text-center">
+    <div class="row pt-5 pb-5">
+        <div class="col-12 text-center pb-4 ">
             <h2>Products</h2>
         </div>
         @forelse ($products as $product )
@@ -17,7 +17,7 @@
                     <h3 class="mt-2">{{$product->name}}</h3>
                   </div>
                   <div class="flip-card-back d-flex">
-                      <div class="p-3 content-center">
+                      <div class="p-3 content-center mx-auto">
                         <b>
                           {{$product->description}}
                         </b>
@@ -30,10 +30,9 @@
               </div>
         </div>
         @empty
-        <div class="col-12 text-center height d-flex" style="
-        justify-content: center;
-        align-items: center;">
-            <h1>No Product Available</h1>
+        <div class="col-12 text-center height">
+            {{-- <h1>No Product Available</h1> --}}
+            <img src="{{asset('img/nodata-removebg-preview.png')}}" style="width: 80%" alt="">
         </div>
 
         @endforelse

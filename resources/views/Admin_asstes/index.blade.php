@@ -17,7 +17,7 @@
         <div class="col-lg-4 col-sm-4 col-12">
             <div class="card">
                 <div class="card-header  align-items-start p-2">
-                    <h2>{{App\Models\sport::count()}}</h2>
+                    <h2>{{App\Models\Sport::count()}}</h2>
                     <p>Sports</p>
                 </div>
 

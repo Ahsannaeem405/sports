@@ -66,6 +66,8 @@ Route::prefix('/admin')->middleware(['SessionCheck', 'auth'])->group(function ()
     Route::get('get_product_option',[AdminController::class,'get_product_option']);
     Route::post('/save_product_option',[optionController::class,'save_product_option']);
     Route::get('/get_edit_product',[optionController::class,'get_edit_product']);
+    Route::post('/update_product_option',[optionController::class,'update_product_option']);
+
 
 
 

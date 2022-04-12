@@ -79,7 +79,7 @@
                                     </thead>
                                     <tbody id="add_row1">
                                     <tr class="rowadd">
-                                        <th scope="row"><input type="text" class="form-control" name="number[0][]"></th>
+                                        <th scope="row"><input type="text" size="2"  class="form-control" name="number[0][]"></th>
                                         <td><input type="text" class="form-control" name="sname[0][]"></td>
                                         <td><input type="text" class="form-control" name="top_size[0][]"></td>
                                         <td><input type="text" class="form-control" name="bottom_size[0][]"></td>

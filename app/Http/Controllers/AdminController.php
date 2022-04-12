@@ -15,7 +15,7 @@ class AdminController extends Controller
 {
     function index(){
        
-      $orders = Order::select(
+      $orders = order::select(
          DB::raw('count(*) as total'),
             DB::raw("DATE_FORMAT(created_at,'%M %Y') as months"),
             DB::raw("DATE_FORMAT(created_at,'%M') as monthKey")

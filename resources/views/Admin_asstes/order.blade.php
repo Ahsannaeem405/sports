@@ -49,7 +49,6 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Phone</th>
-                                <th>color</th>
                                 <th>Team</th>
                                 <th>Order Number</th>
                                 <th>Date Created</th>
@@ -72,7 +71,6 @@
                                 <td>Ali Hamza</td>
                                 <td>ah@mail.com</td>
                                 <td>033456789</td>
-                                <td>Black</td>
                                 <td>UAE</td>
                                 <td>1122354</td>
                                 <td>12/02022</td>

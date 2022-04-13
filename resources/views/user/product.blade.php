@@ -10,7 +10,7 @@
         @forelse ($products as $product )
         <div class="col-md-4 col-12 my-4">
             <div class="flip-card">
-                <a href="{{url('user/option')}}">
+                <a href="{{url('user/option/' .$product->id)}}">
                 <div class="flip-card-inner">
                   <div class="flip-card-front pt-5 text-center text-light">
                     <img src="{{asset('upload/product/'.$product->image)}}" alt="Avatar" class="rounded" style="width:80%;height:300px;">

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Sport;
 use App\Models\roaster;
+use App\Models\product_option;
+
 use App\Models\roaster_detail;
 use Illuminate\Http\Request;
 
@@ -19,8 +21,10 @@ class UserController extends Controller
         return view('user.product',compact('products'));
 
     }
-    function option(){
-        return view('user.option');
+    function option($id){
+        $data=product_option::where('product_id',$id)->get();
+
+        return view('user.option',compact('data'));
     }
     function add_roaster(Request $request){
     // dd($request->all());

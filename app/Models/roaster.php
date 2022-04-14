@@ -11,4 +11,8 @@ class roaster extends Model
         'name','image','order_id'
     ];
     use HasFactory;
+    public function detail()
+    {
+        return $this->hasMany(roaster_detail::class,'roaster_id','id');
+    }
 }

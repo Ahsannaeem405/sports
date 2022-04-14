@@ -66,20 +66,22 @@
                             @php
                                 $x++;
                             @endphp
+        @foreach($orderdetail as $order)
                             <tr>
-                                <td>1</td>
-                                <td>Ali Hamza</td>
-                                <td>ah@mail.com</td>
-                                <td>033456789</td>
-                                <td>UAE</td>
-                                <td>1122354</td>
-                                <td>12/02022</td>
-                                <td>Hamza</td>
-                                <td ><a href="{{url('admin/order_detail/1')}}"> <button type="button" class="btn btn-primary ml-lg-1 ml-md-1 mt-1"  data-toggle="modal" data-target="#exampleModal">
+                                <td>{{$x++}}</td>
+                                <td>{{$order->user->name}}</td>
+                                <td>{{$order->user->email}}</td>
+                                <td>{{$order->user->number}}</td>
+                                <td>{{$order->team_name}}</td>
+                                <td>{{$order->id}}</td>
+                                <td>{{$order->created_at->format('d/m/Y')}}</td>
+                                <td>{{$order->user->name}}</td>
+                                <td ><a href="{{url('admin/order_detail/'.$order->id)}}"> <button type="button" class="btn btn-primary ml-lg-1 ml-md-1 mt-1"  data-toggle="modal" data-target="#exampleModal">
                                     Order Detail
                                   </button></a></td>
                  
                             </tr>
+                        @endforeach
 
                           
 

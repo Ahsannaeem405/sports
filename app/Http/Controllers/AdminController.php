@@ -7,6 +7,9 @@ use App\Models\Product;
 use App\Models\Sport;
 use App\Models\User;
 use App\Models\order;
+use App\Models\place_order;
+use App\Models\roaster;
+use App\Models\roaster_detail;
 use App\Models\product_option;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
@@ -250,7 +253,8 @@ class AdminController extends Controller
         return back()->with("success","Successfully Updated");
     }
 public function orders(){
-    return view('Admin_asstes.order');
+    $orderdetail=place_order::get();
+    return view('Admin_asstes.order',compact('orderdetail'));
 }
 public function order_detail(){
     return view('Admin_asstes.order_detail');
@@ -303,5 +307,12 @@ public function update_password(Request $request){
     return back()->with("success","Password Updated Successfully");
     
     
+}
+
+public function product_detail($id){
+   $placeorder=place_order::find($id);
+$roaster=roaster::with('detail')->get();
+
+return view('Admin_asstes.product_detail',compact('roaster','placeorder'));
 }
 }

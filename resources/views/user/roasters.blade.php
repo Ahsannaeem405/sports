@@ -79,11 +79,11 @@
                                     </thead>
                                     <tbody id="add_row1">
                                     <tr class="rowadd">
-                                        <th scope="row"><input type="text" size="2"  class="form-control" name="number[0][]"></th>
-                                        <td><input type="text" class="form-control" name="sname[0][]"></td>
-                                        <td><input type="text" class="form-control" name="top_size[0][]"></td>
-                                        <td><input type="text" class="form-control" name="bottom_size[0][]"></td>
-                                        <td><input type="text" class="form-control" name="notes[0][]"></td>
+                                        <th scope="row"><input type="text" size="2"  class="form-control" name="number[0][]"required></th>
+                                        <td><input type="text" class="form-control" name="sname[0][]"required></td>
+                                        <td><input type="text" class="form-control" name="top_size[0][]"required></td>
+                                        <td><input type="text" class="form-control" name="bottom_size[0][]"required></td>
+                                        <td><input type="text" class="form-control" name="notes[0][]"required></td>
                                         <td></td>
                                     </tr>
 
@@ -167,11 +167,11 @@ var html=`  <div class="row mx-3 my-3 bg-white roster-border" id="roster-border$
                                     </thead>
                                     <tbody id="add_row${val2}">
                                     <tr class="rowadd">
-                                        <th scope="row"><input type="text" class="form-control"name="number[${val3}][]"></th>
-                                        <td><input type="text" class="form-control"name="sname[${val3}][]"></td>
-                                        <td><input type="text" class="form-control"name="top_size[${val3}][]"></td>
-                                        <td><input type="text" class="form-control"name="bottom_size[${val3}][]"></td>
-                                        <td><input type="text" class="form-control"name="notes[${val3}][]"></td>
+                                        <th scope="row"><input type="text" class="form-control"name="number[${val3}][]"required></th>
+                                        <td><input type="text" class="form-control"name="sname[${val3}][]"required></td>
+                                        <td><input type="text" class="form-control"name="top_size[${val3}][]"required></td>
+                                        <td><input type="text" class="form-control"name="bottom_size[${val3}][]"required></td>
+                                        <td><input type="text" class="form-control"name="notes[${val3}][]"required></td>
                                         <td></td>
                                     </tr>
 
@@ -204,11 +204,11 @@ r++;
 val++;
 $(".rowadd").attr('val', val);
 var html=`<tr class="rowadd" id="removeTr">
-                         <th scope="row"><input type="text" class="form-control" name="number[${val3}][]"></th>
-                         <td><input type="text" class="form-control"name="sname[${val3}][]"></td>
-                                        <td><input type="text" class="form-control"name="top_size[${val3}][]"></td>
-                                        <td><input type="text" class="form-control"name="bottom_size[${val3}][]"></td>
-                                        <td><input type="text" class="form-control"name="notes[${val3}][]"></td>
+                         <th scope="row"><input type="text" class="form-control" name="number[${val3}][]" required></th>
+                         <td><input type="text" class="form-control"name="sname[${val3}][]"required></td>
+                                        <td><input type="text" class="form-control"name="top_size[${val3}][]"required></td>
+                                        <td><input type="text" class="form-control"name="bottom_size[${val3}][]"required></td>
+                                        <td><input type="text" class="form-control"name="notes[${val3}][]"required></td>
                             <td><i class="fa fa-trash text-danger "id="deletebtn" ></i></td>
                                     </tr>`;
 
@@ -234,11 +234,11 @@ var button_id2 = $(this).attr("val2");
 var val3 = $(this).attr("val3");
 
 var html=`<tr class="rowadd" id="removeTr">
-                         <th scope="row"><input type="text" class="form-control" name="number[${val3}][]"></th>
-                         <td><input type="text" class="form-control"name="sname[${val3}][]"></td>
-                                        <td><input type="text" class="form-control"name="top_size[${val3}][]"></td>
-                                        <td><input type="text" class="form-control"name="bottom_size[${val3}][]"></td>
-                                        <td><input type="text" class="form-control"name="notes[${val3}][]"></td>
+                         <th scope="row"><input type="text" class="form-control" name="number[${val3}][]"required></th>
+                         <td><input type="text" class="form-control"name="sname[${val3}][]"required></td>
+                                        <td><input type="text" class="form-control"name="top_size[${val3}][]"required></td>
+                                        <td><input type="text" class="form-control"name="bottom_size[${val3}][]"required></td>
+                                        <td><input type="text" class="form-control"name="notes[${val3}][]"required></td>
                             <td><i class="fa fa-trash text-danger "id="deletebtn"></i></td>
                                     </tr>`;
 var tableBody = $('#add_row' + button_id2 + '').append(html);

@@ -7,6 +7,8 @@ use App\Models\Product;
 use App\Models\Sport;
 use App\Models\User;
 use App\Models\order;
+use App\Models\roaster;
+use App\Models\roaster_detail;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -302,5 +304,11 @@ public function update_password(Request $request){
     return back()->with("success","Password Updated Successfully");
     
     
+}
+public function product_detail(){
+   
+$roaster=roaster::with('detail')->get();
+
+return view('Admin_asstes.product_detail',compact('roaster'));
 }
 }

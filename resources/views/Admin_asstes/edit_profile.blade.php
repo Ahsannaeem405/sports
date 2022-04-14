@@ -124,4 +124,9 @@
   @endif
     $('.dropify').dropify();
 </script>
+<script>
+  
+var currentDate="{{\Carbon\Carbon::now()->timezone('Asia/Karachi')->format('Y-m-d H:i:s')}}";
+// alert(currentDate);
+  </script>
 @endsection

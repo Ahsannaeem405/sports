@@ -58,10 +58,8 @@ foreach ($request->name as $item => $v) {
             ]);
             foreach ($request->number[$item] as $key => $value) {
                 $roaster_data[$item][$key]['roaster_id']=$roaster->id;
-                $roaster_data[$item][$key]['name']=$request->sname[$item];
-                // $roaster_data[$item][$key]['top_size']=$request->top_size[$item];
-                // $roaster_data[$item][$key]['bottom_size']=$request->bottom_size[$item];
-                // $roaster_data[$item][$key]['notes']=$request->notes[$item];
+                $roaster_data[$item][$key]['number']=$value;
+               
               
             }
 

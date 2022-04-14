@@ -5,8 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class roaster_detail extends Model
+class order_lettering extends Model
 {
     use HasFactory;
-    
 }

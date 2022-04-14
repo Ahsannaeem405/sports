@@ -86,6 +86,8 @@ Route::prefix('/user')->middleware(['UserCheck', 'auth'])->group(function () {
     Route::get('product/{id}',[UserController::class,'product']);
     Route::get('option/{id}',[UserController::class,'option']);
     Route::post('add/roaster',[UserController::class,'add_roaster']);
+    Route::post('add/order',[UserController::class,'add_order']);
+    
 
 
 });

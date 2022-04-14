@@ -25,6 +25,8 @@
             {{-- <a href="{{url('rosters')}}"> <input type="button" value="Roster" class="btn btn-success mr-2 bg-success"></a> --}}
             {{-- <a href="{{url("print")}}"> <input type="button" value="print" class="btn btn-primary mr-2"></a> --}}
         </div>
+        <form action="{{url('user/add/order')}}" method="POST" enctype="multipart/form-data">
+        @csrf
         <div class="row">
             <div class="col-12 pt-5">
 
@@ -33,10 +35,10 @@
             <!-- Place order section -->
             <div class="col-md-6 col-lg-3 col-12  placeOrder px-0">
                 <div class="orderDetails px-5 py-5">
-                    <form>
+                    
                         <div class="form-group">
                             <label for="team"><b>Team:</b></label>
-                            <input type="text" class="form-control form-control-sm" id="team">
+                            <input type="text" class="form-control form-control-sm" id="team" name="team_name">
                         </div>
                         <div class="form-group">
                             <label for="orderNumber"><b>Order Number:</b></label>
@@ -57,11 +59,12 @@
                         </div>
 
 
-                    </form>
+                    
 
                     <a href="{{ url('rosters') }}"> <input type="button" value="Roster" class="btn btn-success mr-2 bg-info float-right"></a>
                     <a href="{{ url('rosters') }}"> <input type="button" value="Print" class="btn btn-success mr-2 bg-danger float-right"></a>
-                    <a href="{{ url('rosters') }}"> <input type="button" value="Save" class="btn btn-success mr-2 bg-success float-right"></a>
+                    <button type="submit" class="btn btn-success mr-2 bg-success float-right">save</button>
+
                 </div>
                 <div class="uploadArtwork text-center pt-5">
                     <h6>Upload Artwork</h6>
@@ -79,160 +82,160 @@
 
                 <div class="productOptions">
                     <h3 class="productHeading pt-3 text-center">Product Options</h3>
-                    <form class="px-3 py-2">
+                    <div class="px-3 py-2">
                         <div class="">
 
                             <div class="form-group">
                                 <label for="location" class=""><b>Fabric Choice:</b></label>
                                 <div class="">
-                                    <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
-                                        <option value="ClimaPro">Select</option>
-                                        @foreach($data as $row)
-                                        @if($row->parent=='Product Option' && $row->chalid=='Fabric Choice')
-                                        <option value="{{$row->id}}">{{$row->property}}</option>
-                                        @endif
-                                        @endforeach
+                                <select name="po1[]" class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                    <option value="">Selet</option>
+                                    @foreach($data as $row)
+                                    @if($row->parent=='Product Option' && $row->chalid=='Fabric Choice')
+                                    <option value="{{$row->id}}">{{$row->property}}</option>
+                                    @endif
+                                    @endforeach
 
-                                    </select>
-                                </div>
+                                </select>
                             </div>
-
+                            </div>
+                            
                         </div>
                         <div class="">
 
                             <div class="form-group">
                                 <label for="location" class=""><b>Neck Style:</b></label>
                                 <div class="">
-                                    <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
-                                        <option value="ClimaPro">Select</option>
-                                        @foreach($data as $row)
-                                        @if($row->parent=='Product Option' && $row->chalid=='Neck Style')
-                                        <option value="{{$row->id}}">{{$row->property}}</option>
-                                        @endif
-                                        @endforeach
-                                    </select>
-                                </div>
+                                <select name="po2[]" class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                    <option value="">Selet</option>
+                                    @foreach($data as $row)
+                                    @if($row->parent=='Product Option' && $row->chalid=='Neck Style')
+                                    <option value="{{$row->id}}">{{$row->property}}</option>
+                                    @endif
+                                    @endforeach
+                                </select>
                             </div>
-
+                            </div>
+                           
                         </div>
                         <div class="">
 
                             <div class="form-group">
                                 <label for="location" class=""><b>Jersey Fit/Style:</b></label>
                                 <div class="">
-                                    <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
-                                        <option value="ClimaPro">Select</option>
-                                        @foreach($data as $row)
-                                        @if($row->parent=='Product Option' && $row->chalid=='Jersy Fit')
-                                        <option value="{{$row->id}}">{{$row->property}}</option>
-                                        @endif
-                                        @endforeach
-                                    </select>
-                                </div>
+                                <select name="po3[]" class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                    <option value="">Selet</option>
+                                    @foreach($data as $row)
+                                    @if($row->parent=='Product Option' && $row->chalid=='Jersy Fit')
+                                    <option value="{{$row->id}}">{{$row->property}}</option>
+                                    @endif
+                                    @endforeach
+                                </select>
                             </div>
-
+                            </div>
+                            
                         </div>
                         <div class="">
 
                             <div class="form-group">
                                 <label for="location" class=""><b>Short Inseam:</b></label>
                                 <div class="">
-                                    <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
-                                        <option value="ClimaPro">Select</option>
-                                        @foreach($data as $row)
-                                        @if($row->parent=='Product Option' && $row->chalid=='Short Inseam')
-                                        <option value="{{$row->id}}">{{$row->property}}</option>
-                                        @endif
-                                        @endforeach
-                                    </select>
-                                </div>
+                                <select name="po4[]" class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                    <option value="">Selet</option>
+                                    @foreach($data as $row)
+                                    @if($row->parent=='Product Option' && $row->chalid=='Short Inseam')
+                                    <option value="{{$row->id}}">{{$row->property}}</option>
+                                    @endif
+                                    @endforeach
+                                </select>
                             </div>
-
+                            </div>
+                           
                         </div>
                         <div class="">
 
                             <div class="form-group">
                                 <label for="location" class=""><b>Additional Notes:</b></label>
                                 <div class="">
-                                    <textarea class="form-control" id="notes" rows="3"></textarea>
-                                </div>
+                                <textarea class="form-control" id="notes" rows="3"  name="notes"></textarea>
                             </div>
-
+                            </div>
+                           
                         </div>
-                    </form>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col pt-5">
                         <div class="colorOptions">
                             <h3 class="optionsHeading pt-3 text-center">Color Options</h3>
-                            <form class="px-3 py-2">
+                            <div class="px-3 py-2">
                                 <div class="">
 
                                     <div class="form-group">
                                         <label for="location" class=""><b>Neck:</b></label>
-                                        <div class"">
-                                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
-                                                <option value="ClimaPro">Select</option>
-                                                @foreach($data as $row)
-                                                @if($row->parent=='Color Version' && $row->chalid=='Neck')
-                                                <option value="{{$row->id}}">{{$row->property}}</option>
-                                                @endif
-                                                @endforeach
-                                            </select>
-                                        </div>
+                                        <div class="">
+                                        <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple" name="co1[]">
+                                            <option value="">Selet</option>
+                                            @foreach($data as $row)
+                                            @if($row->parent=='Color Version' && $row->chalid=='Neck')
+                                            <option value="{{$row->id}}">{{$row->property}}</option>
+                                            @endif
+                                            @endforeach
+                                        </select>
                                     </div>
-
+                                    </div>
+                                    
                                 </div>
                                 <div class="">
 
                                     <div class="form-group">
                                         <label for="location" class=""><b>Accent:</b></label>
                                         <div class="">
-                                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
-                                                <option value="ClimaPro">Select</option>
-                                                @foreach($data as $row)
-                                                @if($row->parent=='Color Version' && $row->chalid=='Accent')
-                                                <option value="{{$row->id}}">{{$row->property}}</option>
-                                                @endif
-                                                @endforeach
-                                            </select>
-                                        </div>
+                                        <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple" name="co2[]">
+                                            <option value="">Selet</option>
+                                            @foreach($data as $row)
+                                            @if($row->parent=='Color Version' && $row->chalid=='Accent')
+                                            <option value="{{$row->id}}">{{$row->property}}</option>
+                                            @endif
+                                            @endforeach
+                                        </select>
                                     </div>
-
+                                    </div>
+                                   
                                 </div>
                                 <div class="">
 
                                     <div class="form-group">
                                         <label for="location" class=""><b>BU Logo:</b></label>
                                         <div class="">
-                                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
-                                                <option value="ClimaPro">Select</option>
-                                                @foreach($data as $row)
-                                                @if($row->parent=='Color Version' && $row->chalid=='Bu logo')
-                                                <option value="{{$row->id}}">{{$row->property}}</option>
-                                                @endif
-                                                @endforeach
-                                            </select>
-                                        </div>
+                                        <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple" name="co3[]">
+                                            <option value="">Selet</option>
+                                            @foreach($data as $row)
+                                            @if($row->parent=='Color Version' && $row->chalid=='Bu logo')
+                                            <option value="{{$row->id}}">{{$row->property}}</option>
+                                            @endif
+                                            @endforeach
+                                        </select>
                                     </div>
-
+                                    </div>
+                                   
                                 </div>
                                 <div class="">
 
                                     <div class="form-group">
                                         <label for="location" class=""><b>BODY:</b></label>
                                         <div class="">
-                                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
-                                                <option value="ClimaPro">Select</option>
-                                                @foreach($data as $row)
-                                                @if($row->parent=='Color Version' && $row->chalid=='Body')
-                                                <option value="{{$row->id}}">{{$row->property}}</option>
-                                                @endif
-                                                @endforeach
-                                            </select>
-                                        </div>
+                                        <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple" name="co4[]">
+                                            <option value="">Selet</option>
+                                            @foreach($data as $row)
+                                            @if($row->parent=='Color Version' && $row->chalid=='Body')
+                                            <option value="{{$row->id}}">{{$row->property}}</option>
+                                            @endif
+                                            @endforeach
+                                        </select>
                                     </div>
-
+                                    </div>
+                                   
                                 </div>
 
 
@@ -243,13 +246,13 @@
                                     <table class="m-auto">
                                         <tr class="tr2">
                                             <th class="th2 p-2">
-                                                <input type="color" name="">
+                                                <input type="color" name="colo1" >
                                             </th>
                                             <th class="th2 p-2">
-                                                <input type="color" name="" value="#195232">
+                                                <input type="color" name="colo2" value="#195232">
                                             </th>
                                             <th class="th2 p-2">
-                                                <input type="color" name="" value="#5f1c1c">
+                                                <input type="color" name="colo3" value="#5f1c1c">
                                             </th>
                                         </tr>
 
@@ -258,7 +261,7 @@
 
                                 </div>
 
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -275,7 +278,7 @@
                             <h3 class="text-center">Lettering</h3>
                         </div>
                         <div class="col-12">
-                            <form action="" class="d-flex justify-content-center">
+                            <div action="" class="d-flex justify-content-center">
                                 <div class="d-flex pr-5">
                                     {{-- <button class="btn-none" id="btn_text" type="button"><i class="fas fa-plus"></i>&nbsp; Add New Text</button>&nbsp; --}}
                                     <button class="btn" id="btn_text" type="button"><i class="fas fa-plus"></i>&nbsp; Add New Text</button>&nbsp;
@@ -287,7 +290,7 @@
                                     <button class="btn" id="btn_number" type="button"><i class="fas fa-plus"></i>&nbsp; Add New Number</button>&nbsp;
 
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                     <div class="row px-5 py-5" id="div_append">
@@ -301,29 +304,29 @@
                                         <div class="form-group">
                                             <label for="location" class=""><b>Location:</b></label>
                                             <div class="">
-                                                <input type="text" class="form-control form-control-sm" id="location">
-                                            </div>
+                                            <input type="text" class="form-control form-control-sm" id="location" name="location[]">
                                         </div>
-
+                                        </div>
+                                        
                                     </div>
                                     <div class="">
                                         <div class="form-group">
                                             <label for="location" class=""><b>Text:</b></label>
                                             <div class="">
-                                                <input type="text" class="form-control form-control-sm " id="location">
-                                            </div>
+                                            <input type="text" class="form-control form-control-sm " id="location">
                                         </div>
-
+                                        </div>
+                                       
                                     </div>
                                     <div class="">
                                         <div class="form-group">
 
                                             <label for="mainColor" class=""><b>Font Name:</b></label>
                                             <div class="">
-                                                <input type="text" class="form-control form-control-sm">
-                                            </div>
+                                            <input type="text" name="font_name[]" class="form-control form-control-sm">
                                         </div>
-
+                                        </div>
+                                       
                                     </div>
                                     <div class="">
 
@@ -333,18 +336,18 @@
 
                                             <label for="mainColor" class=""><b>Main Color:</b></label>
                                             <div class="">
-                                                <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example"  name="main_color[]" multiple="multiple">
 
-                                                    <option value="ClimaPro">Select</option>
-                                                    @foreach($data as $row)
-                                                    @if($row->parent=='Color' && $row->chalid=='Color')
-                                                    <option value="{{$row->id}}">{{$row->property}}</option>
-                                                    @endif
-                                                    @endforeach
-                                                </select>
-                                            </div>
+                                                <option value="">Selet</option>
+                                                @foreach($data as $row)
+                                                @if($row->parent=='Color' && $row->chalid=='Color')
+                                                <option value="{{$row->id}}">{{$row->property}}</option>
+                                                @endif
+                                                @endforeach
+                                            </select>
                                         </div>
-
+                                        </div>
+                                       
                                     </div>
                                     <div class="">
 
@@ -352,36 +355,36 @@
 
                                             <label for="mainColor" class=""><b>Trim Color:</b></label>
                                             <div class="">
-                                                <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" name="trim_color[]" multiple="multiple">
 
-                                                    <option value="ClimaPro">Select</option>
-                                                    @foreach($data as $row)
-                                                    @if($row->parent=='Color' && $row->chalid=='Color')
-                                                    <option value="{{$row->id}}">{{$row->property}}</option>
-                                                    @endif
-                                                    @endforeach
-                                                </select>
-                                            </div>
+                                                <option value="">Selet</option>
+                                                @foreach($data as $row)
+                                                @if($row->parent=='Color' && $row->chalid=='Color')
+                                                <option value="{{$row->id}}">{{$row->property}}</option>
+                                                @endif
+                                                @endforeach
+                                            </select>
                                         </div>
-
+                                        </div>
+                                       
                                     </div>
 
                                     <div class="">
                                         <div class="form-group">
                                             <label for="size" class=""><b>Size:</b></label>
                                             <div class="">
-                                                <select class="select2-multiple form-group  form-control" aria-label=".form-control-sm example" multiple="multiple" style="padding: 0.375rem 0.75rem!important;">
+                                            <select class="select2-multiple form-group  form-control" aria-label=".form-control-sm example" name="size[]" multiple="multiple" style="padding: 0.375rem 0.75rem!important;">
 
-                                                    <option value="ClimaPro">Select</option>
-                                                    @foreach($data as $row)
-                                                    @if($row->parent=='Size' && $row->chalid=='Size')
-                                                    <option value="{{$row->id}}">{{$row->property}}</option>
-                                                    @endif
-                                                    @endforeach
-                                                </select>
-                                            </div>
+                                                <option value="">Selet</option>
+                                                @foreach($data as $row)
+                                                @if($row->parent=='Size' && $row->chalid=='Size')
+                                                <option value="{{$row->id}}">{{$row->property}}</option>
+                                                @endif
+                                                @endforeach
+                                            </select>
                                         </div>
-
+                                        </div>
+                                       
                                     </div>
 
                                 </div>
@@ -391,25 +394,25 @@
                         </div>
 
                         <div class="col-md-6 pb-5 pt-2 add-new-product2" val='1'>
-                            <div class="row">
+                            <div class="row ">
                                 <div class="col-12 px-3 Border_1 padrem-5">
                                     <div class="">
                                         <div class="form-group">
                                             <label for="location" class=""><b>Location:</b></label>
                                             <div class="">
-                                                <input type="text" class="form-control form-control-sm " id="location">
-                                            </div>
+                                            <input type="text" class="form-control form-control-sm " name="location2[]" id="location">
                                         </div>
-
+                                        </div>
+                                        
                                     </div>
                                     <div class="">
                                         <div class="form-group">
                                             <label for="mainColor" class=""><b>Font Name:</b></label>
                                             <div class="">
-                                                <input type="text" class="form-control form-control-sm">
-                                            </div>
+                                            <input type="text" name="font_name2[]" class="form-control form-control-sm">
                                         </div>
-
+                                        </div>
+                                        
                                     </div>
 
                                     <div class="">
@@ -418,19 +421,19 @@
 
                                             <label for="mainColor" class=""><b>Main Color:</b></label>
                                             <div class="">
-                                                <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
 
-                                                    <option value="ClimaPro">Select</option>
-                                                    @foreach($data as $row)
-                                                    @if($row->parent=='Color' && $row->chalid=='Color')
-                                                    <option value="{{$row->id}}">{{$row->property}}</option>
-                                                    @endif
-                                                    @endforeach
-                                                </select>
-                                            </div>
-
+                                                <option value="">Selet</option>
+                                                @foreach($data as $row)
+                                                @if($row->parent=='Color' && $row->chalid=='Color')
+                                                <option value="{{$row->id}}">{{$row->property}}</option>
+                                                @endif
+                                                @endforeach
+                                            </select>
                                         </div>
 
+                                        </div>
+                                       
                                     </div>
                                     <div class="">
 
@@ -438,18 +441,18 @@
 
                                             <label for="mainColor" class=""><b>Trim Color:</b></label>
                                             <div class="">
-                                                <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
 
-                                                    <option value="ClimaPro">Select</option>
-                                                    @foreach($data as $row)
-                                                    @if($row->parent=='Color' && $row->chalid=='Color')
-                                                    <option value="{{$row->id}}">{{$row->property}}</option>
-                                                    @endif
-                                                    @endforeach
-                                                </select>
-                                            </div>
+                                                <option value="">Selet</option>
+                                                @foreach($data as $row)
+                                                @if($row->parent=='Color' && $row->chalid=='Color')
+                                                <option value="{{$row->id}}">{{$row->property}}</option>
+                                                @endif
+                                                @endforeach
+                                            </select>
                                         </div>
-
+                                        </div>
+                                       
                                     </div>
 
                                     <div class="">
@@ -457,18 +460,18 @@
 
                                             <label for="mainColor" class=""><b>Size:</b></label>
                                             <div class="">
-                                                <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
 
-                                                    <option value="ClimaPro">Select</option>
-                                                    @foreach($data as $row)
-                                                    @if($row->parent=='Size' && $row->chalid=='Size')
-                                                    <option value="{{$row->id}}">{{$row->property}}</option>
-                                                    @endif
-                                                    @endforeach
-                                                </select>
-                                            </div>
+                                                <option value="">Selet</option>
+                                                @foreach($data as $row)
+                                                @if($row->parent=='Size' && $row->chalid=='Size')
+                                                <option value="{{$row->id}}">{{$row->property}}</option>
+                                                @endif
+                                                @endforeach
+                                            </select>
                                         </div>
-
+                                        </div>
+                                      
                                     </div>
 
                                 </div>
@@ -502,64 +505,74 @@
                             <form>
                                 <div class="form-group ">
                                     <label for="product"><b>Location:</b></label>
-                                    <input type="text" class="form-control form-control-sm" id="location">
+                                    <input type="text" class="form-control form-control-sm" name="loc1" id="location">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="size" class=""><b>Size:</b></label>
-                                    <select class="form-control form-control-sm" aria-label=".form-control-sm example">
+                                    <select class="form-control form-control-sm" name="size1" aria-label=".form-control-sm example">
 
-                                        <option value="ClimaPro">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                       @foreach($data as $row)
+                                                @if($row->parent=='Size' && $row->chalid=='Size')
+                                                <option value="{{$row->id}}">{{$row->property}}</option>
+                                                @endif
+                                                @endforeach
                                     </select>
                                 </div>
                             </form>
                         </div>
 
                         <div class="col-4 border-right p-3">
-                            <form>
+                          
                                 <div class="form-group ">
                                     <label for="product"><b>Location:</b></label>
-                                    <input type="text" class="form-control form-control-sm" id="location">
+                                    <input type="text" class="form-control form-control-sm"  name="loc2">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="size" class=""><b>Size:</b></label>
-                                    <select class="form-control form-control-sm" aria-label=".form-control-sm example">
+                                    <select class="form-control form-control-sm" name="size2" aria-label=".form-control-sm example">
 
-                                        <option value="ClimaPro">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                        <option value="">Selet</option>
+                                                @foreach($data as $row)
+                                                @if($row->parent=='Size' && $row->chalid=='Size')
+                                                <option value="{{$row->id}}">{{$row->property}}</option>
+                                                @endif
+                                                @endforeach
                                     </select>
                                 </div>
-                            </form>
+                           
                         </div>
 
                         <div class="col-4 p-3">
-                            <form>
+                           
                                 <div class="form-group ">
                                     <label for="product"><b>Location:</b></label>
-                                    <input type="text" class="form-control form-control-sm" id="location">
+                                    <input type="text" class="form-control form-control-sm"  name="loc3" >
                                 </div>
 
                                 <div class="form-group">
                                     <label for="size" class=""><b>Size:</b></label>
-                                    <select class="form-control form-control-sm" aria-label=".form-control-sm example">
+                                    <select class="form-control form-control-sm" name="size3" aria-label=".form-control-sm example">
 
-                                        <option value="ClimaPro">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                            <option value="">Select</option>
+                                                @foreach($data as $row)
+                                                @if($row->parent=='Size' && $row->chalid=='Size')
+                                                <option value="{{$row->id}}">{{$row->property}}</option>
+                                                @endif
+                                                @endforeach
                                     </select>
                                 </div>
-                            </form>
+                            
                         </div>
                     </div>
                 </div>
                 <!-- Lettering and Logos -->
 
             </div>
+
         </div>
+    </form>
 </section>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" defer></script>
@@ -592,96 +605,98 @@
                         <button class="float-right btn-none" id="deletebtn"><i class="fas fa-trash" style="color: red"></i></button><br>
 
 
-                        <div class="">
-                            <div class="form-group">
-                                <label for="location" class=""><b>Location:</b></label>
-                                <div class="">
-                                <input type="text" class="form-control form-control-sm" id="location">
-                            </div>
-                            </div>
-                            
-                        </div>
-                        <div class="">
-                            <div class="form-group">
-                                <label for="location" class=""><b>Text:</b></label>
-                                <div class="">
-                                <input type="text" class="form-control form-control-sm " id="location">
-                            </div>
-                            </div>
-                        
-                        </div>
-                        <div class="">
-                            <div class="form-group">
+<div class="">
+    <div class="form-group">
+        <label for="location" class=""><b>Location:</b></label>
+        <div class="">
+        <input type="text" class="form-control form-control-sm" id="location">
+    </div>
+    </div>
+    
+</div>
+<div class="">
+    <div class="form-group">
+        <label for="location" class=""><b>Text:</b></label>
+        <div class="">
+        <input type="text" class="form-control form-control-sm " id="location">
+    </div>
+    </div>
+   
+</div>
+<div class="">
+    <div class="form-group">
 
-                                <label for="mainColor" class=""><b>Font Name:</b></label>
-                                <div class="">
-                                <input type="text" class="form-control form-control-sm">
-                            </div>
-                            </div>
-                        
-                        </div>
-                        <div class="">
+        <label for="mainColor" class=""><b>Font Name:</b></label>
+        <div class="">
+        <input type="text" class="form-control form-control-sm">
+    </div>
+    </div>
+   
+</div>
+<div class="">
 
 
 
-                            <div class="form-group">
+    <div class="form-group">
 
-                                <label for="mainColor" class=""><b>Main Color:</b></label>
-                                <div class="">
-                                <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+        <label for="mainColor" class=""><b>Main Color:</b></label>
+        <div class="">
+        <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
 
-                                    <option value="ClimaPro">Select</option>
-                                    @foreach($data as $row)
-                                    @if($row->parent=='Color' && $row->chalid=='Color')
-                                    <option value="{{$row->id}}">{{$row->property}}</option>
-                                    @endif
-                                    @endforeach
-                                </select>
-                            </div>
-                            </div>
-                        
-                        </div>
-                        <div class="">
+            <option value="">Selet</option>
+            @foreach($data as $row)
+            @if($row->parent=='Color' && $row->chalid=='Color')
+            <option value="{{$row->id}}">{{$row->property}}</option>
+            @endif
+            @endforeach
+        </select>
+    </div>
+    </div>
+   
+</div>
+<div class="">
 
-                            <div class="form-group">
+    <div class="form-group">
 
-                                <label for="mainColor" class=""><b>Trim Color:</b></label>
-                                <div class="">
-                                <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+        <label for="mainColor" class=""><b>Trim Color:</b></label>
+        <div class="">
+        <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
 
-                                    <option value="ClimaPro">Select</option>
-                                    @foreach($data as $row)
-                                    @if($row->parent=='Color' && $row->chalid=='Color')
-                                    <option value="{{$row->id}}">{{$row->property}}</option>
-                                    @endif
-                                    @endforeach
-                                </select>
-                            </div>
-                            </div>
-                        
-                        </div>
-                        <div class="">
-                                    <div class="form-group">
-                                <label for="size" class=""><b>Size:</b></label>
-                                <div class="">
-                                <select class="select2-multiple form-group  form-control" aria-label=".form-control-sm example" multiple="multiple" style="padding: 0.375rem 0.75rem!important;">
+            <option value="">Selet</option>
+            @foreach($data as $row)
+            @if($row->parent=='Color' && $row->chalid=='Color')
+            <option value="{{$row->id}}">{{$row->property}}</option>
+            @endif
+            @endforeach
+        </select>
+    </div>
+    </div>
+   
+</div>
 
-                                    <option value="ClimaPro">Select</option>
-                                    @foreach($data as $row)
-                                    @if($row->parent=='Size' && $row->chalid=='Size')
-                                    <option value="{{$row->id}}">{{$row->property}}</option>
-                                    @endif
-                                    @endforeach
-                                </select>
-                            </div>
-                            </div>
-                        
-                        </div>
+<div class="">
+    <div class="form-group">
+        <label for="size" class=""><b>Size:</b></label>
+        <div class="">
+        <select class="select2-multiple form-group  form-control" aria-label=".form-control-sm example" multiple="multiple" style="padding: 0.375rem 0.75rem!important;">
 
-                </div>
-            </div>
-        </div>
+            <option value="">Selet</option>
+            @foreach($data as $row)
+            @if($row->parent=='Size' && $row->chalid=='Size')
+            <option value="{{$row->id}}">{{$row->property}}</option>
+            @endif
+            @endforeach
+        </select>
+    </div>
+    </div>
+   
+</div>
 
+</div>
+                    
+                    </div>
+                    </div>
+</div>
             `;
             var tableBody = $("#div_append").append(html);
             $('.select2-multiple').select2();
@@ -695,29 +710,31 @@
             val++;
             $(".add-new-product2").attr('val', val);
             var html = `
-                       
-                <div class="col-md-6 pb-5 pt-2 id="removeTr2" add-new-product2 mt-3"   val='1'>
+                <div class="col-md-6 pb-5 mt-3 add-new-product2" id="removeTr2" val='1'>
+
                 
-                <div class="row mt-2">
+
+                            <div class="row ">
+
                                 <div class="col-12 px-3 Border_1 padrem-5">
-                                <button class="float-right btn-none" id="deletebtn2"><i class="fas fa-trash" style="color: red"></i></button><br>
+                                    <button class="float-right btn-none" id="deletebtn2"><i class="fas fa-trash" style="color: red"></i></button><br>
                                     <div class="">
                                         <div class="form-group">
                                             <label for="location" class=""><b>Location:</b></label>
                                             <div class="">
-                                                <input type="text" class="form-control form-control-sm " id="location">
-                                            </div>
+                                            <input type="text" class="form-control form-control-sm " id="location">
                                         </div>
-
+                                        </div>
+                                        
                                     </div>
                                     <div class="">
                                         <div class="form-group">
                                             <label for="mainColor" class=""><b>Font Name:</b></label>
                                             <div class="">
-                                                <input type="text" class="form-control form-control-sm">
-                                            </div>
+                                            <input type="text" class="form-control form-control-sm">
                                         </div>
-
+                                        </div>
+                                        
                                     </div>
 
                                     <div class="">
@@ -726,19 +743,19 @@
 
                                             <label for="mainColor" class=""><b>Main Color:</b></label>
                                             <div class="">
-                                                <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
 
-                                                    <option value="ClimaPro">Select</option>
-                                                    @foreach($data as $row)
-                                                    @if($row->parent=='Color' && $row->chalid=='Color')
-                                                    <option value="{{$row->id}}">{{$row->property}}</option>
-                                                    @endif
-                                                    @endforeach
-                                                </select>
-                                            </div>
-
+                                                <option value="">Selet</option>
+                                                @foreach($data as $row)
+                                                @if($row->parent=='Color' && $row->chalid=='Color')
+                                                <option value="{{$row->id}}">{{$row->property}}</option>
+                                                @endif
+                                                @endforeach
+                                            </select>
                                         </div>
 
+                                        </div>
+                                       
                                     </div>
                                     <div class="">
 
@@ -746,18 +763,18 @@
 
                                             <label for="mainColor" class=""><b>Trim Color:</b></label>
                                             <div class="">
-                                                <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
 
-                                                    <option value="ClimaPro">Select</option>
-                                                    @foreach($data as $row)
-                                                    @if($row->parent=='Color' && $row->chalid=='Color')
-                                                    <option value="{{$row->id}}">{{$row->property}}</option>
-                                                    @endif
-                                                    @endforeach
-                                                </select>
-                                            </div>
+                                                <option value="">Selet</option>
+                                                @foreach($data as $row)
+                                                @if($row->parent=='Color' && $row->chalid=='Color')
+                                                <option value="{{$row->id}}">{{$row->property}}</option>
+                                                @endif
+                                                @endforeach
+                                            </select>
                                         </div>
-
+                                        </div>
+                                       
                                     </div>
 
                                     <div class="">
@@ -765,25 +782,32 @@
 
                                             <label for="mainColor" class=""><b>Size:</b></label>
                                             <div class="">
-                                                <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
 
-                                                    <option value="ClimaPro">Select</option>
-                                                    @foreach($data as $row)
-                                                    @if($row->parent=='Size' && $row->chalid=='Size')
-                                                    <option value="{{$row->id}}">{{$row->property}}</option>
-                                                    @endif
-                                                    @endforeach
-                                                </select>
-                                            </div>
+                                                <option value="">Selet</option>
+                                                @foreach($data as $row)
+                                                @if($row->parent=='Size' && $row->chalid=='Size')
+                                                <option value="{{$row->id}}">{{$row->property}}</option>
+                                                @endif
+                                                @endforeach
+                                            </select>
                                         </div>
-
+                                        </div>
+                                      
                                     </div>
 
                                 </div>
                             </div>
-                </div>
+
+
+
+                        </div>
+
+                                           
+               
             `;
             var tableBody = $("#div_append").append(html);
+            $('.select2-multiple').select2();
         });
         $(document).on('click', '#deletebtn2', function() {
             $(this).closest('#removeTr2').remove();

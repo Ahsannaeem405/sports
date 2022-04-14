@@ -34,7 +34,7 @@ class CreatePlaceOrdersTable extends Migration
             $table->text('loc1')->nullable();
             $table->text('loc2')->nullable();
             $table->text('loc3')->nullable();
-             $table->text('size1')->nullable();
+            $table->text('size1')->nullable();
             $table->text('size2')->nullable();
             $table->text('size3')->nullable();
             

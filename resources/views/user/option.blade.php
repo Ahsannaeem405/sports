@@ -17,8 +17,10 @@
 </style>
 
 @section('content')
-    <section class="productFeatures">
 
+    <section class="productFeatures">
+    <form action="{{url('user/add/order')}}" method="POST" enctype="multipart/form-data">
+        @csrf
         <div class="container-fluid">
             <div class=" align-items-center pl-4 ">
                 {{-- <a href="{{url('rosters')}}">  <input type="button" value="Next" class="btn btn-success mr-2 bg-success"></a> --}}
@@ -32,10 +34,10 @@
                 <!-- Place order section -->
                 <div class="col-md-6 col-lg-3 col-12  placeOrder px-0">
                     <div class="orderDetails px-5 py-5">
-                        <form>
+                        
                             <div class="form-group">
                                 <label for="team"><b>Team:</b></label>
-                                <input type="text" class="form-control form-control-sm" id="team">
+                                <input type="text" class="form-control form-control-sm" id="team" name="team_name">
                             </div>
                             <div class="form-group">
                                 <label for="orderNumber"><b>Order Number:</b></label>
@@ -56,14 +58,13 @@
                             </div>
 
 
-                        </form>
+                       
                     
                     <a href="{{ url('rosters') }}"> <input type="button" value="Next"
                             class="btn btn-success mr-2 bg-info float-right"></a>
                             <a href="{{ url('rosters') }}"> <input type="button" value="Print"
                             class="btn btn-success mr-2 bg-danger float-right"></a>
-                            <a href="{{ url('rosters') }}"> <input type="button" value="Save"
-                            class="btn btn-success mr-2 bg-success float-right"></a>
+                            <button type="submit" class="btn btn-success mr-2 bg-success float-right">save</button>
                             </div>
                     <div class="uploadArtwork text-center pt-5">
                         <h6>Upload Artwork</h6>
@@ -81,7 +82,7 @@
 
                     <div class="productOptions">
                         <h3 class="productHeading pt-3 text-center">Product Options</h3>
-                        <form class="px-3 py-2">
+                       
                              <div class="d-flex">
                                     
                                         <div class="form-group c1">
@@ -89,7 +90,7 @@
                                         </div>
                                         <div class="c2">
                                             <select class="select2-multiple form-control form-control-sm"
-                                                aria-label=".form-control-sm example" multiple="multiple">
+                                                aria-label=".form-control-sm example" multiple="multiple" name="po1[]">
                                                 <option value="ClimaPro">Selet</option>
                                                 @foreach($data as $row)
                                                     @if($row->parent=='Product Option' && $row->chalid=='Fabric Choice')
@@ -107,7 +108,7 @@
                                         </div>
                                         <div class="c2">
                                             <select class="select2-multiple form-control form-control-sm"
-                                                aria-label=".form-control-sm example" multiple="multiple">
+                                                aria-label=".form-control-sm example" multiple="multiple" name="po2[]">
                                                 <option value="ClimaPro">Selet</option>
                                                 @foreach($data as $row)
                                                     @if($row->parent=='Product Option' && $row->chalid=='Neck Style')
@@ -124,7 +125,7 @@
                                         </div>
                                         <div class="c2">
                                             <select class="select2-multiple form-control form-control-sm"
-                                                aria-label=".form-control-sm example" multiple="multiple">
+                                                aria-label=".form-control-sm example" multiple="multiple" name="po3[]">
                                                <option value="ClimaPro">Selet</option>
                                                 @foreach($data as $row)
                                                     @if($row->parent=='Product Option' && $row->chalid=='Jersy Fit')
@@ -141,7 +142,7 @@
                                         </div>
                                         <div class="c2">
                                             <select class="select2-multiple form-control form-control-sm"
-                                                aria-label=".form-control-sm example" multiple="multiple">
+                                                aria-label=".form-control-sm example" multiple="multiple" name="po4[]">
                                                 <option value="ClimaPro">Selet</option>
                                                 @foreach($data as $row)
                                                     @if($row->parent=='Product Option' && $row->chalid=='Short Inseam')
@@ -157,14 +158,14 @@
                                                 <label for="location" class=""><b>Additional Notes:</b></label>
                                         </div>
                                         <div class="c2">
-                                            <textarea class="form-control" id="notes" rows="3"></textarea>
+                                            <textarea class="form-control" id="notes" rows="3" name="notes"></textarea>
                                         </div>
                                     </div>
 
 
                             
                             
-                        </form>
+                       
                     </div>
                     <div class="row">
                         <div class="col pt-5">
@@ -178,7 +179,7 @@
                                         </div>
                                         <div class="c2">
                                             <select class="select2-multiple form-control form-control-sm"
-                                                aria-label=".form-control-sm example" multiple="multiple">
+                                                aria-label=".form-control-sm example" multiple="multiple" name="co1[]">
                                                 <option value="ClimaPro">Selet</option>
                                                 @foreach($data as $row)
                                                     @if($row->parent=='Color Version' && $row->chalid=='Neck')
@@ -195,7 +196,7 @@
                                         </div>
                                         <div class="c2">
                                             <select class="select2-multiple form-control form-control-sm"
-                                                aria-label=".form-control-sm example" multiple="multiple">
+                                                aria-label=".form-control-sm example" multiple="multiple" name="co2[]">
                                                 <option value="ClimaPro">Selet</option>
                                                 @foreach($data as $row)
                                                     @if($row->parent=='Color Version' && $row->chalid=='Accent')
@@ -212,7 +213,7 @@
                                         </div>
                                         <div class="c2">
                                             <select class="select2-multiple form-control form-control-sm"
-                                                aria-label=".form-control-sm example" multiple="multiple">
+                                                aria-label=".form-control-sm example" multiple="multiple" name="co3[]">
                                                 <option value="ClimaPro">Selet</option>
                                                 @foreach($data as $row)
                                                     @if($row->parent=='Color Version' && $row->chalid=='Bu logo')
@@ -229,7 +230,7 @@
                                         </div>
                                         <div class="c2">
                                             <select class="select2-multiple form-control form-control-sm"
-                                                aria-label=".form-control-sm example" multiple="multiple">
+                                                aria-label=".form-control-sm example" multiple="multiple" name="co4[]">
                                                 <option value="ClimaPro">Selet</option>
                                                 @foreach($data as $row)
                                                     @if($row->parent=='Color Version' && $row->chalid=='Body')
@@ -248,13 +249,13 @@
                                         <table class="m-auto">
                                             <tr class="tr2">
                                                 <th class="th2 p-2">
-                                                    <input type="color" name="">
+                                                    <input type="color" name="colo1" value="">
                                                 </th>
                                                 <th class="th2 p-2">
-                                                    <input type="color" name="" value="#195232">
+                                                    <input type="color" name="colo2" value="#195232">
                                                 </th>
                                                 <th class="th2 p-2">
-                                                    <input type="color" name="" value="#5f1c1c">
+                                                    <input type="color" name="colo3" value="#5f1c1c">
                                                 </th>
                                             </tr>
                                             
@@ -280,7 +281,7 @@
                                 <h3 class="text-center">Lettering</h3>
                             </div>
                             <div class="col-12">
-                                <form action="" class="d-flex justify-content-center">
+                                <div class="d-flex justify-content-center">
                                     <div class="d-flex pr-5">
                                         {{-- <button class="btn-none" id="btn_text" type="button"><i class="fas fa-plus"></i>&nbsp; Add New Text</button>&nbsp; --}}
                                         <button class="btn btn-danger" id="btn_text" type="button"><i
@@ -294,7 +295,7 @@
                                                 class="fas fa-plus"></i>&nbsp; Add New Number</button>&nbsp;
 
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                         <div class="row px-5 py-5" id="div_append">
@@ -437,7 +438,7 @@
                                                 <label for="mainColor" class=""><b>Main Color:</b></label>
                                             </div>
                                             <div class="c2">
-                                                <select class="select2-multiple form-control form-control-sm"
+                                                <select class="select2-multiple color form-control form-control-sm"
                                                 aria-label=".form-control-sm example" multiple="multiple">
 
                                                     <option value="ClimaPro">Selet</option>
@@ -475,7 +476,7 @@
                                                 <label for="mainColor" class=""><b>Size:</b></label>
                                             </div>
                                             <div class="c2">
-                                                 <select class="select2-multiple form-control form-control-sm"
+                                                 <select class="select2-multiple select_size form-control form-control-sm"
                                                 aria-label=".form-control-sm example" multiple="multiple">
 
                                                     <option value="ClimaPro">Selet</option>
@@ -513,7 +514,7 @@
                             <div class="col-12 d-flex justify-content-center">
                                 <div class="card border-0">
                                     {{-- <img class="img-fluid" src="./img/uploadicon.png" alt="Upload Logo"> --}}
-                                    <input name="file" type="file" class="dropify" data-height="100" />
+                                    <input name="file" type="file" name="logo1" class="dropify" data-height="100" />
                                     <div class="card-body">
                                         <h5 class="card-title">Upload Logo</h5>
                                     </div>
@@ -525,54 +526,63 @@
                                 <form>
                                     <div class="form-group ">
                                         <label for="product"><b>Location:</b></label>
-                                        <input type="text" class="form-control form-control-sm" id="location">
+                                        <input type="text" name="loc1" class="form-control form-control-sm" id="location">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="size" class=""><b>Size:</b></label>
-                                        <select class="form-control form-control-sm" aria-label=".form-control-sm example">
+                                        <select class="form-control form-control-sm" aria-label=".form-control-sm example" name="size1">
 
-                                            <option value="ClimaPro">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
+                                            <option value="ClimaPro">Selet</option>
+                                                @foreach($data as $row)
+                                                    @if($row->parent=='Size' && $row->chalid=='Size')
+                                                        <option value="{{$row->id}}">{{$row->property}}</option>
+                                                    @endif
+                                                @endforeach
                                         </select>
                                     </div>
                                 </form>
                             </div>
 
                             <div class="col-4 border-right p-3">
-                                <form>
+                                
                                     <div class="form-group ">
                                         <label for="product"><b>Location:</b></label>
-                                        <input type="text" class="form-control form-control-sm" id="location">
+                                        <input type="text"  name="loc2" class="form-control form-control-sm" id="location">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="size" class=""><b>Size:</b></label>
-                                        <select class="form-control form-control-sm" aria-label=".form-control-sm example">
+                                        <select class="form-control form-control-sm" aria-label=".form-control-sm example" name="size2">
 
-                                            <option value="ClimaPro">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
+                                            <option value="ClimaPro">Selet</option>
+                                                    @foreach($data as $row)
+                                                        @if($row->parent=='Size' && $row->chalid=='Size')
+                                                            <option value="{{$row->id}}">{{$row->property}}</option>
+                                                        @endif
+                                                    @endforeach
                                         </select>
                                     </div>
-                                </form>
+                                
                             </div>
 
                             <div class="col-4 p-3">
                                 <form>
                                     <div class="form-group ">
                                         <label for="product"><b>Location:</b></label>
-                                        <input type="text" class="form-control form-control-sm" id="location">
+                                        <input type="text" name="loc3" class="form-control form-control-sm" id="location">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="size" class=""><b>Size:</b></label>
-                                        <select class="form-control form-control-sm" aria-label=".form-control-sm example">
+                                        <select class="form-control form-control-sm" aria-label=".form-control-sm example" name="size3">
 
-                                            <option value="ClimaPro">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
+                                            <option value="ClimaPro">Selet</option>
+                                                    @foreach($data as $row)
+                                                        @if($row->parent=='Size' && $row->chalid=='Size')
+                                                            <option value="{{$row->id}}">{{$row->property}}</option>
+                                                        @endif
+                                                    @endforeach
                                         </select>
                                     </div>
                                 </form>
@@ -581,7 +591,9 @@
                     </div>
                     <!-- Lettering and Logos -->
 
+
                 </div>
+            </form>
             </div>
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -606,6 +618,9 @@
                 var val = $(".add-new-product1").attr('val');
                 val++;
                 $(".add-new-product1").attr('val', val);
+                var op=$('.color').html();
+                var select_size=$('.select_size').html();
+                
                 var html = `
             <div class="col-md-6 pb-3  add-new-product1 mt-3" id="removeTr" val='` + val + `'>
                 <div class="row ">
@@ -619,30 +634,13 @@
                                                 <input type="text" class="form-control " id="location">
                                             </div>
                                         </div>
-                                        
-                                        <div class="d-flex">
+                                        <div class="d-flex">    
                                             <div class="form-group c1">
                                                
-                                                <label for="mainColor" class=""><b>Main Color:</b></label>
+                                                <label for="mainColor" class=""><b>Text:</b></label>
                                             </div>
                                             <div class="c2">
                                                 <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="d-flex">
-                                            
-                                            <div class="form-group c1">
-                                               
-                                                <label for="mainColor" class=""><b>Trim Color:</b></label>
-                                            </div>
-                                            <div class="c2">
-                                                <select class="select2-multiple form-group  form-control"
-                                                    aria-label=".form-control-sm example" multiple="multiple" style="padding: 0.375rem 0.75rem!important;">
-
-                                                    <option value="ClimaPro">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
-                                                </select>
                                             </div>
                                         </div>
                                         <div class="d-flex">    
@@ -657,10 +655,46 @@
                                         <div class="d-flex">
                                             <div class="form-group c1">
                                                
+                                                <label for="mainColor" class=""><b>Main Color:</b></label>
+                                            </div>
+                                            <div class="c2">
+                                                <select class="select2-multiple form-group  form-control"
+                                                    aria-label=".form-control-sm example" multiple="multiple" style="padding: 0.375rem 0.75rem!important;">'` + op + `'
+                                                    
+
+                                                   
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex">
+                                            
+                                            <div class="form-group c1">
+                                               
+                                                <label for="mainColor" class=""><b>Trim Color:</b></label>
+                                            </div>
+                                            <div class="c2">
+                                                <select class="select2-multiple form-group  form-control"
+                                                    aria-label=".form-control-sm example" multiple="multiple" style="padding: 0.375rem 0.75rem!important;">'` + op + `'
+
+
+                                                   
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="d-flex">
+                                            <div class="form-group c1">
+                                               
                                                 <label for="mainColor" class=""><b>Size:</b></label>
                                             </div>
                                             <div class="c2">
-                                                <input type="text" class="form-control">
+
+                                                <select class="select2-multiple form-group  form-control"
+                                                    aria-label=".form-control-sm example" multiple="multiple" style="padding: 0.375rem 0.75rem!important;">'` + select_size + `'
+
+
+                                                   
+                                                </select>
                                             </div>
                                         </div>
                     
@@ -677,6 +711,9 @@
             });
             $('#btn_number').click(function() {
                 var val = $(".add-new-product2").attr('val');
+                var op=$('.color').html();
+                var select_size=$('.select_size').html();
+                
                 val++;
                 $(".add-new-product2").attr('val', val);
                 var html = `
@@ -692,26 +729,6 @@
                                                 <input type="text" class="form-control " id="location">
                                             </div>
                                         </div>
-                                        
-                                        <div class="d-flex">
-                                            <div class="form-group c1">
-                                               
-                                                <label for="mainColor" class=""><b>Main Color:</b></label>
-                                            </div>
-                                            <div class="c2">
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="d-flex">
-                                            
-                                            <div class="form-group c1">
-                                               
-                                                <label for="mainColor" class=""><b>Trim Color:</b></label>
-                                            </div>
-                                            <div class="c2">
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
                                         <div class="d-flex">    
                                             <div class="form-group c1">
                                                
@@ -721,20 +738,60 @@
                                                 <input type="text" class="form-control">
                                             </div>
                                         </div>
+                                       <div class="d-flex">
+                                            <div class="form-group c1">
+                                               
+                                                <label for="mainColor" class=""><b>Main Color:</b></label>
+                                            </div>
+                                            <div class="c2">
+                                                <select class="select2-multiple form-group  form-control"
+                                                    aria-label=".form-control-sm example" multiple="multiple" style="padding: 0.375rem 0.75rem!important;">'` + op + `'
+                                                    
+
+                                                   
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex">
+                                            
+                                            <div class="form-group c1">
+                                               
+                                                <label for="mainColor" class=""><b>Trim Color:</b></label>
+                                            </div>
+                                            <div class="c2">
+                                                <select class="select2-multiple form-group  form-control"
+                                                    aria-label=".form-control-sm example" multiple="multiple" style="padding: 0.375rem 0.75rem!important;">'` + op + `'
+
+
+                                                   
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
                                         <div class="d-flex">
                                             <div class="form-group c1">
                                                
                                                 <label for="mainColor" class=""><b>Size:</b></label>
                                             </div>
                                             <div class="c2">
-                                                <input type="text" class="form-control">
+                                            
+                                                <select class="select2-multiple form-group  form-control"
+                                                    aria-label=".form-control-sm example" multiple="multiple" style="padding: 0.375rem 0.75rem!important;">'` + select_size + `'
+
+
+                                                   
+                                                </select>
                                             </div>
                                         </div>
+                                        
+                                        
                     </div>
                     </div>
                   </div>
             `;
                 var tableBody = $("#div_append").append(html);
+                $('.select2-multiple').select2();      
+
             });
             $(document).on('click', '#deletebtn2', function() {
                 $(this).closest('#removeTr2').remove();

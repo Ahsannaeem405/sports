@@ -6,6 +6,8 @@ use App\Models\Product;
 use App\Models\Sport;
 use App\Models\roaster;
 use App\Models\product_option;
+use App\Models\place_order;
+
 
 use App\Models\roaster_detail;
 use Illuminate\Http\Request;
@@ -51,8 +53,8 @@ foreach ($request->name as $item => $v) {
          
     
             $roaster=roaster::create([
-'name'=>$request->name[$item][0],
-'image'=>$fileName,
+                'name'=>$request->name[$item][0],
+                'image'=>$fileName,
 
 
             ]);
@@ -80,11 +82,85 @@ foreach ($request->name as $item => $v) {
             }
             
         
-}
+        }
 
-foreach ($roaster_data as $key => $value) {
-    roaster_detail::insert($value);
-}
-return back();
+        foreach ($roaster_data as $key => $value) {
+            roaster_detail::insert($value);
+        }
+        return back();
+    }
+    
+    function add_order(Request $request){
+
+        if(isset($request->po1))
+        {
+            $po1 =$request->po1;
+            $po1=implode(",",$po1);
+
+        }
+        else{
+            $po1 =null;
+
+        }
+        if(isset($request->po2))
+        {
+            $po2 =$request->po2;
+            $po2=implode(",",$po2);
+
+        }
+        else{
+            $po2 =null;
+
+        }
+        if(isset($request->po3))
+        {
+            $po3 =$request->po3;
+            $po3=implode(",",$po3);
+
+        }
+        else{
+            $po3 =null;
+
+        }
+        if(isset($request->po4))
+        {
+            $po4 =$request->po4;
+            $po4=implode(",",$po4);
+
+        }
+        else{
+            $po4 =null;
+
+        }
+
+//dd($request,$po1,$po3,$po2,$po4);
+
+            
+            //$table->text('wo_id')->nullable();
+            //$table->text('file')->nullable();
+            
+            //$table->text('logo1')->nullable();
+           
+        $use=new place_order();
+        $use->team_name=$request->team_name;
+        $use->po1=$po1;
+        $use->po2=$po2;
+        $use->po3=$po3;
+        $use->po4=$po4;
+        $use->notes=$request->notes;
+        $use->colo1=$request->colo1;
+        $use->colo2=$request->colo2;
+        $use->colo3=$request->colo3;
+        $use->loc1=$request->loc1;
+        $use->loc2=$request->loc2;
+        $use->loc3=$request->loc3;
+        $use->size1=$request->size1;
+        $use->size2=$request->size2;
+        $use->size3=$request->size3;
+        $use->save();
+
+
+
     }
 }
+ 

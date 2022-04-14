@@ -25,7 +25,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if (Auth::user()->role=="admin") {
+
+            return redirect('admin/index');
+        }
+       else if (Auth::user()->role=="user") {
+
+            return redirect('user/');
+        }
+
+        
     }
     public function logout(){
         Auth::logout();

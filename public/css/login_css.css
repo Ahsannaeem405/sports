@@ -9,8 +9,9 @@
     height: 100vh;
     /* background: rgb(41, 41, 41);
     background: linear-gradient(0deg, rgba(41, 41, 41, 1) 0%, rgba(160, 0, 0, 1) 100%); */
-    background-color: #2f4353;
-background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%);
+    /* background-color: #2f4353;
+background-image: linear-gradient(315deg, #2f4353 0%, #d2ccc4 74%); */
+background-image: linear-gradient(315deg, #e0f1ff 0%, #f0e9e1 74%);
     color: #ffff;
 }
 

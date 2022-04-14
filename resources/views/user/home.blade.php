@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <h2>Choose a sports below to get started</h2>
+                <h2>Choose a sport below to get started</h2>
             </div>
         </div>
         <div class="row mt-5 pb-5">

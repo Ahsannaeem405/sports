@@ -3,14 +3,13 @@
 
 <link rel="stylesheet" type="text/css" href="https://jeremyfagis.github.io/dropify/dist/css/dropify.min.css">
 <style>
-    .greyWhiteGradiant{
-        background: none !important;
-        border-left: 1px solid #dee2e6;
-    }
+    section.roster-bg {
+    background-image: linear-gradient(315deg, #e0f1ff 0%, #f0e9e1 74%);
+}
 </style>
 
 @section('content')
-    <section>
+    <section class="roster-bg">
         <form action="{{url('user/add/roaster')}}" method="POST" enctype="multipart/form-data">
             @csrf
         <div class="container-fluid">
@@ -35,7 +34,7 @@
                        <button class="btn btn-primary" id="btn_addsection" type="button" add_new="1" add_roast="0"><i class="fas fa-plus"></i>&nbsp; Add New Roster</button>
                     </div>
                 </div>
-                <div class="col-lg-9 col-xl-9 col-md-9 col-12 greyWhiteGradiant" id="sectionadd">
+                <div class="col-lg-9 col-xl-9 col-md-9 col-12" id="sectionadd">
                    
                     <div class="row mx-3 my-3 bg-white roster-border">
                         <div class="col-12">

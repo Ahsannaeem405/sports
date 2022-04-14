@@ -30,7 +30,7 @@ class UserController extends Controller
         return view('user.option',compact('data'));
     }
     function add_roaster(Request $request){
-    // dd($request->all());
+    
 //    dd($request->file);
         $data2 = [];
         $roaster_data=[];
@@ -56,6 +56,8 @@ foreach ($request->name as $item => $v) {
             $roaster=roaster::create([
                 'name'=>$request->name[$item][0],
                 'image'=>$fileName,
+                'order_id'=>$request->or_id,
+
 
 
             ]);
@@ -92,7 +94,6 @@ foreach ($request->name as $item => $v) {
     }
     
     function add_order(Request $request){
-
         if(isset($request->po1))
         {
             $po1 =$request->po1;
@@ -211,6 +212,34 @@ foreach ($request->name as $item => $v) {
             $request->logo1->move('upload/', $fileName1);
             $use->logo1 = $fileName1;
         }
+        if ($request->hasFile('file2')) {
+                  
+
+            $file = $request->file('file2');
+            $extension = $request->file2->extension();
+            $fileName12 = time(). "2_." .$extension;
+            $request->file2->move('upload/', $fileName12);
+            $use->logo2 = $fileName12;
+        }
+        if ($request->hasFile('file3')) {
+                  
+
+            $file = $request->file('file3');
+            $extension = $request->file3->extension();
+            $fileName13 = time(). "3_." .$extension;
+            $request->file3->move('upload/', $fileName13);
+            $use->logo3 = $fileName13;
+        }
+        if ($request->hasFile('file')) {
+                  
+
+            $file = $request->file('file');
+            $extension = $request->file->extension();
+            $fileName2 = time(). "1_." .$extension;
+            $request->file->move('upload/', $fileName2);
+            $use->file = $fileName2;
+        }
+        
         $use->user_id=Auth::user()->id;
         $use->save();
          for($i=0; $i< count($request->type); $i++ )
@@ -249,9 +278,20 @@ foreach ($request->name as $item => $v) {
                 
                 $quite->save();
             }
-            dd($use);
+
+            
+            return redirect()->route('roster', ['id' => $use->id]);
+
+           
 
 
+
+    }
+    
+    function rosters($id)
+    {
+
+         return view('user.roasters',compact('id'));
 
     }
 }

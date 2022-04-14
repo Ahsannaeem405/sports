@@ -12,6 +12,7 @@
     <section class="roster-bg">
         <form action="{{url('user/add/roaster')}}" method="POST" enctype="multipart/form-data">
             @csrf
+            <input type="hidden" name="or_id" value="{{$id}}">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-3">

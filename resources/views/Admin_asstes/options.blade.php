@@ -150,6 +150,7 @@
                     success: function (data) {
 
                         $('#products').empty().append(data);
+                        $('.option').empty();
 
                     },
 
@@ -159,20 +160,25 @@
             $('.sports_option').on('change', function () {
                 // var value=$(this).val();
                 var id = $(this).val();
-                $.ajax({
+                if(id!="null")
+                {
+                    $.ajax({
 
-                    type: 'get',
-                    url: '{{URL::to('admin/get_product_option')}}',
-                    data: {'id': id},
+                        type: 'get',
+                        url: '{{URL::to('admin/get_product_option')}}',
+                        data: {'id': id},
 
-                    success: function (data) {
+                        success: function (data) {
 
-                        $('.option').empty().append(data);
+                            $('.option').empty().append(data);
 
-                    },
+                        },
 
 
-                });
+                    });
+
+                }
+                
             });
 
 

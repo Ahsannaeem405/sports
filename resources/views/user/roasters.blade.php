@@ -16,7 +16,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-3">
-                <div class="d-flex justify-content-start pt-4"> <a href="{{url('user/option')}}"> <input type="button" value="Go Back" class="btn btn-success mr-2"></a></div>
+                <div class="d-flex justify-content-start pt-4"> <a href="{{url('user/pre_option/' .$id)}}"> <input type="button" value="Go Back" class="btn btn-success mr-2"></a></div>
                 </div>
                 <div class="col-9">
                 <div class="d-flex justify-content-end align-items-center pl-4 pt-4">

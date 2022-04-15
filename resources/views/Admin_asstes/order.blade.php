@@ -19,7 +19,7 @@
 
             <div class="card-header">
                 <h4>Orders</h4>
-                <a href="{{url('user/option')}}"><button class="btn btn-success">New Work Order</button></a>
+                <a href="{{url('admin/admin_index')}}"><button class="btn btn-success">New Work Order</button></a>
             </div>
             <div class="card-content p-3">
                 {{-- <form action="#">

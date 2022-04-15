@@ -34,6 +34,9 @@ Route::get('/', function () {
 });
 Route::get('/logout', [App\Http\Controllers\HomeController::class, 'logout']);
 Route::prefix('/admin')->middleware(['SessionCheck', 'auth'])->group(function () {
+    Route::get('/admin_index', [UserController::class, 'index']);
+
+
     Route::get('/index', [AdminController::class, 'index']);
     Route::get('/users', [AdminController::class, 'users']);
     Route::get('/sports', [AdminController::class, 'sports']);
@@ -86,6 +89,13 @@ Route::prefix('/user')->middleware(['UserCheck', 'auth'])->group(function () {
     Route::get('option/{id}',[UserController::class,'option']);
     Route::post('add/roaster',[UserController::class,'add_roaster']);
     Route::post('add/order',[UserController::class,'add_order']);
+    Route::post('add/updat_order/{id}',[UserController::class,'updat_order']);
+    
+    Route::get('get_previous',[UserController::class,'get_previous']);
+    Route::get('pre_option/{idd}',[UserController::class,'pre_option']);
+    
+
+    
     
 
 

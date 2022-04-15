@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-
+use auth;
 class Usermiddleware
 {
     /**
@@ -16,7 +16,7 @@ class Usermiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (auth()->user()->role== 'user') {
+        if (auth()->user()->role== 'user' || auth::user()->role=="admin") {
 
 
             return $next($request);

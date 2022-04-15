@@ -19,7 +19,7 @@ class AdminController extends Controller
 {
     function index(){
        
-      $orders = order::select(
+      $orders = place_order::select(
          DB::raw('count(*) as total'),
             DB::raw("DATE_FORMAT(created_at,'%M %Y') as months"),
             DB::raw("DATE_FORMAT(created_at,'%M') as monthKey")
@@ -310,7 +310,8 @@ public function update_password(Request $request){
 }
 
 public function product_detail($id){
-   $placeorder=place_order::find($id);
+   $placeorder=place_order::with('lettering')->find($id);
+   
 $roaster=roaster::with('detail')->get();
 
 return view('Admin_asstes.product_detail',compact('roaster','placeorder'));

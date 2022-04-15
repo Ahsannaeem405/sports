@@ -12,4 +12,8 @@ class place_order extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function lettering()
+    {
+        return $this->hasMany(order_lettering::class,'order_id','id');
+    }
 }

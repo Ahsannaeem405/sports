@@ -32,7 +32,7 @@ class UserController extends Controller
     }
     function add_roaster(Request $request){
     
-//    dd($request->file);
+//    dd($request->all());
         $data2 = [];
         $roaster_data=[];
         $fileName=[];

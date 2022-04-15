@@ -45,6 +45,7 @@
                         <div class="col-12 pt-4 d-flex justify-content-between">
                             <div>
                                 <div class="uploadLogo mt-2 p-2">
+                                    {{-- <input name="order_id" type="hidden"  value="{{$id}}" /> --}}
                                     <input name="file[0][]" type="file"  class="dropify" data-height="100" required />
 
                                   {{-- <img src="./img/uploadicon.png" class="img-fluid"> --}}

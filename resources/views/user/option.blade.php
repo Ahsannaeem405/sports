@@ -50,20 +50,20 @@
                         <div class="pt-2">
                             <div class="form-group">
                                 <label for="location"><b>Reorder:</b></label>
-                                <input type="checkbox">
+                                <input type="checkbox" class="reorder_check" id="reorder_check">
                             </div>
                             <div class="form-group">
                                 <label for="previousOrderNum"><b>Previous Order Number:</b></label>
-                                <input type="text" class="form-control form-control-sm" id="previousOrderNum">
+                                <input type="text" class="form-control form-control-sm reorder" id="previousOrderNum" disabled>
                             </div>
                         </div>
 
 
                     
 
-                    <a href="{{ url('rosters') }}"> <input type="button" value="Roster" class="btn btn-success mr-2 bg-info float-right"></a>
-                    <a href="{{ url('rosters') }}"> <input type="button" value="Print" class="btn btn-success mr-2 bg-danger float-right"></a>
-                    <button type="submit" class="btn btn-success mr-2 bg-success float-right">save</button>
+                   {{--  <a href="{{ url('rosters') }}"> <input type="button" value="Roster" class="btn btn-success mr-2 bg-info float-right"></a>
+                    <a href="{{ url('rosters') }}"> <input type="button" value="Print" class="btn btn-success mr-2 bg-danger float-right"></a> --}}
+                   
 
                 </div>
                 <div class="uploadArtwork text-center pt-5">
@@ -313,7 +313,8 @@
                                         <div class="form-group">
                                             <label for="location" class=""><b>Text:</b></label>
                                             <div class="">
-                                            <input type="text" class="form-control form-control-sm " id="location">
+                                            <input type="text" class="form-control form-control-sm " name="text[]" id="location">
+                                            <input type="hidden" class="form-control form-control-sm" name="type[]" value="text">
                                         </div>
                                         </div>
                                        
@@ -400,7 +401,7 @@
                                         <div class="form-group">
                                             <label for="location" class=""><b>Location:</b></label>
                                             <div class="">
-                                            <input type="text" class="form-control form-control-sm " name="location2[]" id="location">
+                                            <input type="text" class="form-control form-control-sm " name="location[]" id="location">
                                         </div>
                                         </div>
                                         
@@ -409,7 +410,8 @@
                                         <div class="form-group">
                                             <label for="mainColor" class=""><b>Font Name:</b></label>
                                             <div class="">
-                                            <input type="text" name="font_name2[]" class="form-control form-control-sm">
+                                                <input type="hidden" class="form-control form-control-sm" name="type[]" value="nontext">
+                                            <input type="text" name="font_name[]" class="form-control form-control-sm">
                                         </div>
                                         </div>
                                         
@@ -421,7 +423,7 @@
 
                                             <label for="mainColor" class=""><b>Main Color:</b></label>
                                             <div class="">
-                                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple" name="main_color[]">
 
                                                 <option value="">Selet</option>
                                                 @foreach($data as $row)
@@ -441,7 +443,7 @@
 
                                             <label for="mainColor" class=""><b>Trim Color:</b></label>
                                             <div class="">
-                                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple" name="trim_color[]">
 
                                                 <option value="">Selet</option>
                                                 @foreach($data as $row)
@@ -460,7 +462,7 @@
 
                                             <label for="mainColor" class=""><b>Size:</b></label>
                                             <div class="">
-                                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple" name="size[]">
 
                                                 <option value="">Selet</option>
                                                 @foreach($data as $row)
@@ -490,10 +492,28 @@
                         <div class="col-12 pt-2 pb-4">
                             <h3 class="text-center">Location</h3>
                         </div>
-                        <div class="col-12 d-flex justify-content-center">
+                        <div class="col-4 d-flex justify-content-center">
                             <div class="card border-0">
                                 {{-- <img class="img-fluid" src="./img/uploadicon.png" alt="Upload Logo"> --}}
                                 <input name="file" type="file" class="dropify" data-height="100" />
+                                <div class="card-body">
+                                    <h5 class="card-title">Upload Logo</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 d-flex justify-content-center">
+                            <div class="card border-0">
+                                {{-- <img class="img-fluid" src="./img/uploadicon.png" alt="Upload Logo"> --}}
+                                <input name="file2" type="file" class="dropify" data-height="100" />
+                                <div class="card-body">
+                                    <h5 class="card-title">Upload Logo</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 d-flex justify-content-center">
+                            <div class="card border-0">
+                                {{-- <img class="img-fluid" src="./img/uploadicon.png" alt="Upload Logo"> --}}
+                                <input name="file3" type="file" class="dropify" data-height="100" />
                                 <div class="card-body">
                                     <h5 class="card-title">Upload Logo</h5>
                                 </div>
@@ -563,6 +583,7 @@
                                                 @endforeach
                                     </select>
                                 </div>
+                                 <button type="submit" class="btn btn-success mr-2 bg-success float-right">Next</button>
                             
                         </div>
                     </div>
@@ -609,7 +630,7 @@
     <div class="form-group">
         <label for="location" class=""><b>Location:</b></label>
         <div class="">
-        <input type="text" class="form-control form-control-sm" id="location">
+        <input type="text" class="form-control form-control-sm" id="location" name="location[]">
     </div>
     </div>
     
@@ -618,9 +639,10 @@
     <div class="form-group">
         <label for="location" class=""><b>Text:</b></label>
         <div class="">
-        <input type="text" class="form-control form-control-sm " id="location">
+        <input type="text" class="form-control form-control-sm " id="location" name="text[]">
     </div>
     </div>
+    <input type="hidden" class="form-control form-control-sm" name="type[]" value="text">
    
 </div>
 <div class="">
@@ -628,7 +650,7 @@
 
         <label for="mainColor" class=""><b>Font Name:</b></label>
         <div class="">
-        <input type="text" class="form-control form-control-sm">
+        <input type="text" class="form-control form-control-sm" name="font_name[]">
     </div>
     </div>
    
@@ -641,7 +663,7 @@
 
         <label for="mainColor" class=""><b>Main Color:</b></label>
         <div class="">
-        <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+        <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple" name="main_color[]">
 
             <option value="">Selet</option>
             @foreach($data as $row)
@@ -660,7 +682,7 @@
 
         <label for="mainColor" class=""><b>Trim Color:</b></label>
         <div class="">
-        <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+        <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple" name="trim_color[]">
 
             <option value="">Selet</option>
             @foreach($data as $row)
@@ -678,7 +700,7 @@
     <div class="form-group">
         <label for="size" class=""><b>Size:</b></label>
         <div class="">
-        <select class="select2-multiple form-group  form-control" aria-label=".form-control-sm example" multiple="multiple" style="padding: 0.375rem 0.75rem!important;">
+        <select class="select2-multiple form-group  form-control" aria-label=".form-control-sm example" multiple="multiple" style="padding: 0.375rem 0.75rem!important;" name="size[]">
 
             <option value="">Selet</option>
             @foreach($data as $row)
@@ -722,7 +744,7 @@
                                         <div class="form-group">
                                             <label for="location" class=""><b>Location:</b></label>
                                             <div class="">
-                                            <input type="text" class="form-control form-control-sm " id="location">
+                                            <input type="text" class="form-control form-control-sm " id="location" name="location[]">
                                         </div>
                                         </div>
                                         
@@ -731,7 +753,8 @@
                                         <div class="form-group">
                                             <label for="mainColor" class=""><b>Font Name:</b></label>
                                             <div class="">
-                                            <input type="text" class="form-control form-control-sm">
+                                            <input type="text" class="form-control form-control-sm" name="font_name[]">
+                                            <input type="hidden" class="form-control form-control-sm" name="type[]" value="nontext">
                                         </div>
                                         </div>
                                         
@@ -743,7 +766,7 @@
 
                                             <label for="mainColor" class=""><b>Main Color:</b></label>
                                             <div class="">
-                                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple" name="main_color[]">
 
                                                 <option value="">Selet</option>
                                                 @foreach($data as $row)
@@ -763,7 +786,7 @@
 
                                             <label for="mainColor" class=""><b>Trim Color:</b></label>
                                             <div class="">
-                                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple" name="trim_color[]">
 
                                                 <option value="">Selet</option>
                                                 @foreach($data as $row)
@@ -782,7 +805,7 @@
 
                                             <label for="mainColor" class=""><b>Size:</b></label>
                                             <div class="">
-                                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple">
+                                            <select class="select2-multiple form-control form-control-sm" aria-label=".form-control-sm example" multiple="multiple" name="size[]">
 
                                                 <option value="">Selet</option>
                                                 @foreach($data as $row)
@@ -809,6 +832,28 @@
             var tableBody = $("#div_append").append(html);
             $('.select2-multiple').select2();
         });
+            $(document).on('click', '.reorder_check', function() {
+                var check_val =document.getElementById("reorder_check");
+                
+                 console.log(check_val);
+                 if (check_val.checked == true )
+                {
+                    
+                    $(".reorder").attr('disabled',false); 
+
+                } 
+                else {
+                    $(".reorder").attr('disabled',true ); 
+
+                }   
+               
+
+               
+            });
+                
+
+               
+        
         $(document).on('click', '#deletebtn2', function() {
             $(this).closest('#removeTr2').remove();
         });

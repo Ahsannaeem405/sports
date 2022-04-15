@@ -15,7 +15,7 @@
                 <a href="{{url('user/product/'.$sport->id)}}" class="hover_none">
                     <div class="card">
                         <div class="card-img">
-                          <img src="{{asset('upload/sports/'.$sport->image)}}" >
+                          <img src="{{asset('upload/sports/'.$sport->image)}}" style="max-height: 250px;min-height: 249px;">
                         </div>
                         <div class="card-content">
                           <h2 class="big-title">{{$sport->name}}</h2>

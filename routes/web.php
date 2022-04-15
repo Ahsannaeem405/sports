@@ -26,9 +26,8 @@ Route::get('/page1', function () {
 });
 Route::get('/print', function () {
     return view('user.home2');
-});Route::get('/rosters', function () {
-    return view('user.roasters');
 });
+Route::get('/rosters/{id}',[UserController::class,'rosters'])->name('roster');
 Route::get('/', function () {
 
     return view('auth.login');

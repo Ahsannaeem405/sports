@@ -318,12 +318,13 @@
                 {{-- Lettering --}}
                 <div class="card">
                                        
-
+                   
                 
                 <div class="card-body">
+                    <label class="font-weight-bold text-center"><h2><b>Lettering</b></h2></label>
                     <div class="col-md-12">
                         <div class="row">              
-                            <label class="font-weight-bold text-center"><h2><b>Lettering</b></h2></label>
+                           
                 @foreach($placeorder->lettering as $letter)
                              <div class="col-md-6">
                                 <div class="form-group">
@@ -422,7 +423,7 @@
                <ul class="list-unstyled mb-0 product-color-options">
                 
                        <li class="d-inline-block size">
-                        <img src="{{asset('upload/'.$placeorder->logo1)}}" >
+                        <img src="{{asset('upload/'.$placeorder->logo1)}}" style="height: 50px;width:50px;">
                                 </li>
                       
                                                       
@@ -434,7 +435,7 @@
                <ul class="list-unstyled mb-0 product-color-options">
                 
                        <li class="d-inline-block size">
-                        <img src="{{asset('upload/'.$placeorder->logo2)}}" >
+                        <img src="{{asset('upload/'.$placeorder->logo2)}}"style="height: 50px;width:50px;" >
                                 </li>
                       
                                                       
@@ -446,7 +447,7 @@
                <ul class="list-unstyled mb-0 product-color-options">
                 
                        <li class="d-inline-block size">
-                        <img src="{{asset('upload/'.$placeorder->logo3)}}" >
+                        <img src="{{asset('upload/'.$placeorder->logo3)}}"style="height: 50px;width:50px;" >
                                 </li>
                       
                                                       
@@ -569,62 +570,66 @@
                                     
         </div>
     </div>
+{{-- <roaster> --}}
+    <div class="card">
+        <div class="card-body">
+            <label class="font-weight-bold text-center"><h2><b>Roasters</b></h2></label>
+    <div class="col-md-12">
+      
+               
+       
+        
+        
+           
+@foreach($placeorder->roaster as $roasters)
+        
+{{-- <h6>{{$roasters->name}}</h6> --}}
+        
+        
+ <img src={{asset('upload/roaster/'.$roasters->image)}} class="text-center" style="height:100px;width:100px;" >    
+        
+    <div class="col-md-12 col-sm-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Name</th>
+                    <th>Top size</th>
+                    <th>Bottom size</th>
+                    <th>Notes</th>
+                  
+
+                </tr>
+   @foreach($roasters->detail as $detail)
+                <tr>
+                    <th>{{$detail->number}}</th>
+                    <th>{{$detail->name}}</th>
+                    <th>{{$detail->top_size}}</th>
+                    <th>{{$detail->bottom_size}}</th>
+                    <th>{{$detail->notes}}</th>
+                  
+
+                </tr>
+              @endforeach
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+                         </div>
+     </div>
+     @endforeach
+</div>
+</div>
 </div>
 </div>
 
-                                </div>
-                                </div>
+                                
                                    
                                 <!-- Add Arrows -->
                               
 
                          
-                            <div class="col-md-12">
-                                <div class="card">
-                                       
-                                    <h2 class="text-center mt-2">Roasters</h2>
-                                
-                                <div class="card-body">
-                                   
-                   @foreach($roaster as $roasters)
-                                
-                    {{-- <h6>{{$roasters->name}}</h6> --}}
-                                
-                                
-                               <img src={{asset('upload/roaster/'.$roasters->image)}} class="text-center" >    
-                                
-                            <div class="col-md-12 col-sm-12">
-                                <table class="table zero-configuration">
-                                    <thead>
-                                        <tr>
-                                            <th>Number</th>
-                                            <th>Name</th>
-                                            <th>Top size</th>
-                                            <th>Bottom size</th>
-                                            <th>Notes</th>
-                                          
-            
-                                        </tr>
-                           @foreach($roasters->detail as $detail)
-                                        <tr>
-                                            <th>{{$detail->number}}</th>
-                                            <th>{{$detail->name}}</th>
-                                            <th>{{$detail->top_size}}</th>
-                                            <th>{{$detail->bottom_size}}</th>
-                                            <th>{{$detail->notes}}</th>
-                                          
-            
-                                        </tr>
-                                      @endforeach
-                                    </thead>
-                                    <tbody>
-                                    </tbody>
-                                </table>
-                                                 </div>
-                             </div>
-                             @endforeach
-                        </div>
-                    </div>
+                           
                 </section>
                 <!-- app ecommerce details end -->
 

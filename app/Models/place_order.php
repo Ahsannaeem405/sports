@@ -16,4 +16,8 @@ class place_order extends Model
     {
         return $this->hasMany(order_lettering::class,'order_id','id');
     }
+    public function roaster()
+    {
+        return $this->hasMany(roaster::class,'order_id','id');
+    }
 }
